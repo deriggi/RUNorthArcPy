@@ -12,8 +12,8 @@ layerToAdd = arcpy.mapping.Layer(layerpath)
 arcpy.mapping.AddLayer(df,layerToAdd,"BOTTOM")
 
 # print attributes
-cursor = arcpy.da.SearchCursor(layerToAdd, 'Shape_Area')
+cursor = arcpy.da.SearchCursor(layerToAdd, ['Shape_Area', 'OID@', 'SHAPE@TRUECENTROID'])
 for row in cursor:
-	print row[0]
+	print str(row[0]) + ' ' + str(row[1]) + ' ' + str(row[2])
 
 
