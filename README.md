@@ -4,6 +4,10 @@ and projects we will be using for this project. The team is learning Python so t
 infrastrucutre required for the safayi registration integration task. Also Python is a great way to automate common
 ArcGIS tasks
 
-### Python Lessons
-Lessons for basic Python programming and introductry ArcPy are used
+### Learning Python
+Lessons for basic Python programming and introductory ArcPy are used to help ease the learning curve. ArcPy has an 
+extensive API so understanding basic Python command structures is essential for building stable and reusable software
+
+#### First Lessons
+
 
