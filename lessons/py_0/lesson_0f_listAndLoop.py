@@ -1,4 +1,3 @@
-
 # a list of letters
 someLetters = ['c', 'z', 'r', 't', 's','l', 'e']
 
