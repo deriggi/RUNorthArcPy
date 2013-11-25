@@ -1,5 +1,4 @@
 
-
 print 'hello'
 print 'my name is John'
 print 'how many bicycles do you have?'
