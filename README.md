@@ -77,9 +77,15 @@ Assignment two requires the programmers to query the sql server database using a
 [2) Query SQL Server From ArcPy](https://docs.google.com/document/d/10GhARtr_xj9JQ7BSkvfF34Su0UA3i2ITnAm-oUzG3fE/edit?usp=sharing)
 
 ```python
-  sde_conn = arcpy.ArcSDESQLExecute(r"C:\\Users\\Administrator\\AppData\\Roaming\\ESRI\\Desktop10.2\\ArcCatalog\\Connection to DAIL13077.sde")
+  # change this line to point to your db connection
+  sde_conn = arcpy.ArcSDESQLExecute(r"C:/DeRiggiComputer/ArcCatalog/Connection to DAIL13077.sde")
+  
+  # the sql query
   sql = "select PropertyID, District from IFMSDB.DBO.Property where District = {0} and Block = {1} and ParcelNo = {2}".format(1, 226, 4)          
+  
+  # the response
   sde_return = sde_conn.execute(sql)
+  
 ```
 
 
@@ -95,7 +101,14 @@ The JSON format can then be embedded into web applications as we do in the Web M
 In the web mapping assignments we use the json and/or csv files we created with arcpy to build some web based maps with
 free open source tools like leaflet js
 
+
 [1) JSON Points on a Map](https://docs.google.com/document/d/1XyVzYlqORZo7VEWlZOtqHNkyyKV1jiKAUseluYVKvW8/edit?usp=sharing)
+
+```JavaScript
+// a tiny json object!
+
+{"centroid":[67.11519357832525,36.70581137062923]}
+```
 
 The second task introduces a site called geojson.io which makes it easy to make a web map from common spatial data
 formats. Students modify their scripts to produce CSV files and then simply drag them onto the geojson.io page
