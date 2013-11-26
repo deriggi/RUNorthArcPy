@@ -25,8 +25,6 @@ Assignment two requires the programmers to query the sql server database using a
 
 [2) Query SQL Server From ArcPy](https://docs.google.com/document/d/10GhARtr_xj9JQ7BSkvfF34Su0UA3i2ITnAm-oUzG3fE/edit?usp=sharing)
 
-
-
 In retrospect it would have been easier to do a CSV example first, but these json files are an important
 part of the IFMS integration effort here
 
@@ -38,4 +36,9 @@ In the web mapping assignments we use the json and/or csv files we created with 
 free open source tools like leaflet js
 
 [1) JSON Points on a Map](https://docs.google.com/document/d/1XyVzYlqORZo7VEWlZOtqHNkyyKV1jiKAUseluYVKvW8/edit?usp=sharing)
+
+The second task introduces a site called geojson.io which makes it easy to make a web map from common spatial data
+formats. Students modify their scripts to produce CSV files and then simply drag them onto the geojson.io page
+
+[2) Creating CSV files and GeoJson.IO](https://docs.google.com/document/d/1n1tYgcQBd8I7Uxw94ChTBsWeGmwOZ8C7J5av8mxQ7aw/edit?usp=sharing)
 
