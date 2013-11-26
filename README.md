@@ -10,6 +10,27 @@ extensive API so understanding basic Python command structures is necessary for 
 applications
 
 #### First Lessons
+The introductory lessons work through basic programming structures likes
+  1. printing and variables
+  ```python
+      bicycles = 5
+      s = "i have {0} bicycles".format(bicycles)
+      print s
+
+  ```
+  2. string manipulation
+  3. conditional statements
+  4. loops
+
+  ```python
+    provinces = ['Balkh', 'Badakshan', 'Baghlan', 'Faryab', 'Jawzjan', 'Kunduz', 'Samangan', 'Takhar']
+    for p in provinces:
+      print 'a province name: {0}'.format(p)
+  ```
+  
+  5. functions
+  6. writing text files
+  
 
 
 #### ArcPy Assignments
