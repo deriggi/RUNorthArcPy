@@ -36,9 +36,35 @@ The introductory lessons work through basic programming structures likes
 ## ArcPy Assignments
 
 ### Project 1 - Write Centroids of a Shapefile to JSON
-This is going to be used for the IFMS integration!
-The first assignment requires writing an arcpy script to iterate through spatial data, get the centroid, and write the
-data out as json.
+Use ArcPy to develop a system for converting a shapefile into JSON. This is going to be used for the IFMS integration!
+Write an arcpy script to iterate through spatial data, get the centroid, and write the result out as json.
+
+The output does not need to look exactly like the example but it must have two parts:
+
+   1. a centroid element: the center point of the parcel
+   2. 2. properties element:
+
+It must be valid JSON.
+
+Example:
+```JavaScript
+{
+ "centroid": [
+   67.115193578325,
+   36.705811370629
+ ],
+ "properties": {
+   "Parcel_ID": "10",
+   "Shape_Area": "571.475635931",
+   "Dist_No": "1",
+   "Shape_Leng": "107.387143989",
+   "Block_Numb": "21",
+   "OBJECTID": "55"
+ }
+}
+```
+
+The JSON output can then be embedded into web applications as we do in the Web Mapping Assignments
 
 
 [1) Shapefile Centroid to JSON](https://docs.google.com/document/d/1paWDiVn_09vb8CHPGPbMIF_1BFhRGH1KVSTCe9DBGIM/edit)
@@ -79,18 +105,24 @@ Assignment two requires the programmers to query the sql server database using a
 
 This team will write ArcPy to query SQL Server. The program should have three parameters which can be easily changed:
 
-1) Parcel
-
-2) Block
-
-3) District
+1. Parcel
+2. Block
+3. District
 
 The output should be similar to the following:
 
 Property Type: <value of type>
 Property Usage:<value of usage>
 
-[2) Query SQL Server From ArcPy](https://docs.google.com/document/d/10GhARtr_xj9JQ7BSkvfF34Su0UA3i2ITnAm-oUzG3fE/edit?usp=sharing)
+
+[ESRI ArcPy SQL Reference](http://resources.arcgis.com/en/help/main/10.2/index.html#//018z0000007z000000)
+
+#### Step 2
+
+Loop through the shapefile and query the database with the attribute information
+
+For each feature in the parcel shapefile, use the code you developed in step 1 to query the database with parameters from each record in the shapefile
+
 
 ```python
   # change this line to point to your db connection
@@ -105,18 +137,24 @@ Property Usage:<value of usage>
 ```
 
 
-In retrospect it would have been easier to do a CSV example first, but these json files are an important
-part of the IFMS integration effort here
-
-The JSON format can then be embedded into web applications as we do in the Web Mapping Assignments
+## Web Maping Assignments
 
 
-
-#### Web Maping Assignments
+### Project 1 - Making simple web maps with our data
 
 In the web mapping assignments we use the json and/or csv files we created with arcpy to build some web based maps with
 free open source tools like leaflet js
 
+We will look at a simple case in which make a web map with a place mark
+```JavaScript
+var map = L.mapbox.map('map',  'examples.map-9ijuk24y' ,{  center: [36.7046, 67.1495], zoom:13, scrollWheelZoom:false});
+
+ var myIcon = L.icon({
+  iconUrl: 'images/marker-icon.png',
+});
+
+var marker = L.marker(36, 67], {icon: myIcon}).addTo(map);
+```
 
 [1) JSON Points on a Map](https://docs.google.com/document/d/1XyVzYlqORZo7VEWlZOtqHNkyyKV1jiKAUseluYVKvW8/edit?usp=sharing)
 
@@ -125,6 +163,8 @@ free open source tools like leaflet js
 
 {"centroid":[67.11519357832525,36.70581137062923]}
 ```
+
+### Project 2 - Creating a CSV from a Shapefile and Displaying it on Geojson.IO
 
 The second task introduces a site called geojson.io which makes it easy to make a web map from common spatial data
 formats. Students modify their scripts to produce CSV files and then simply drag them onto the geojson.io page
