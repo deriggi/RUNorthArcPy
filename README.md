@@ -1,15 +1,15 @@
-## ArcPy at RAMP UP North
+# ArcPy at RAMP UP North
 Welcome to the RAMP UP North GIS Unit's GitHub Site! This site contains the Python examples, lessons,
 and projects we will be using for this project. We are learning Python so that we can build the software
 infrastrucutre required for the safayi registration integration task. Also Python is a great way to automate common
 ArcGIS tasks
 
-### Learning Python
+## Learning Python
 Lessons for basic Python programming and introductory ArcPy are used to introduce the fundamentals. ArcPy has an 
 extensive API so understanding basic Python command structures is necessary for building stable and reusable ArcPy
 applications
 
-#### First Lessons
+## First Lessons
 The introductory lessons work through basic programming structures likes
   1. printing and variables
   ```python
@@ -33,8 +33,10 @@ The introductory lessons work through basic programming structures likes
   
 [code for the first lessons track](https://github.com/deriggi/RUNorthArcPy/tree/master/lessons/py_0)
 
-#### ArcPy Assignments
+## ArcPy Assignments
 
+### Project 1 - Write Centroids of a Shapefile to JSON
+This is going to be used for the IFMS integration!
 The first assignment requires writing an arcpy script to iterate through spatial data, get the centroid, and write the
 data out as json.
 
@@ -69,10 +71,24 @@ data out as json.
 
 
 
-
+### Project 2 - Query SQL Server Database with ArcPy
 
 Assignment two requires the programmers to query the sql server database using attribute values of the spatial data
 
+#### Step 1
+
+This team will write ArcPy to query SQL Server. The program should have three parameters which can be easily changed:
+
+1) Parcel
+
+2) Block
+
+3) District
+
+The output should be similar to the following:
+
+Property Type: <value of type>
+Property Usage:<value of usage>
 
 [2) Query SQL Server From ArcPy](https://docs.google.com/document/d/10GhARtr_xj9JQ7BSkvfF34Su0UA3i2ITnAm-oUzG3fE/edit?usp=sharing)
 
