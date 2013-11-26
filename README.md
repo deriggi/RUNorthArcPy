@@ -37,3 +37,5 @@ The JSON format can then be embedded into web applications as we do in the Web M
 In the web mapping assignments we use the json and/or csv files we created with arcpy to build some web based maps with
 free open source tools like leaflet js
 
+[2) One Point on a Map](https://docs.google.com/document/d/1XyVzYlqORZo7VEWlZOtqHNkyyKV1jiKAUseluYVKvW8/edit?usp=sharing)
+
