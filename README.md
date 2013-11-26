@@ -5,8 +5,9 @@ infrastrucutre required for the safayi registration integration task. Also Pytho
 ArcGIS tasks
 
 ### Learning Python
-Lessons for basic Python programming and introductory ArcPy are used to help ease the learning curve. ArcPy has an 
-extensive API so understanding basic Python command structures is essential for building stable and reusable software
+Lessons for basic Python programming and introductory ArcPy are used to introduce the fundamentals. ArcPy has an 
+extensive API so understanding basic Python command structures is necessary for building stable and reusable ArcPy
+applications
 
 #### First Lessons
 
