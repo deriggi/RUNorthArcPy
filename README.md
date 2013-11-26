@@ -31,7 +31,7 @@ The introductory lessons work through basic programming structures likes
   5. functions
   6. writing text files
   
-
+[code for the first lessons track](https://github.com/deriggi/RUNorthArcPy/tree/master/lessons/py_0)
 
 #### ArcPy Assignments
 
