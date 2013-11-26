@@ -9,7 +9,7 @@ Lessons for basic Python programming and introductory ArcPy are used to introduc
 extensive API so understanding basic Python command structures is necessary for building stable and reusable ArcPy
 applications
 
-## First Lessons
+## 1.0 First Lessons
 The introductory lessons work through basic programming structures likes
   1. printing and variables
   ```python
@@ -33,9 +33,9 @@ The introductory lessons work through basic programming structures likes
   
 [code for the first lessons track](https://github.com/deriggi/RUNorthArcPy/tree/master/lessons/py_0)
 
-## ArcPy Assignments
+## 2 ArcPy Assignments
 
-### Project 1 - Write Centroids of a Shapefile to JSON
+### Project 2.1 - Write Centroids of a Shapefile to JSON
 Use ArcPy to develop a system for converting a shapefile into JSON. This is going to be used for the IFMS integration!
 Write an arcpy script to iterate through spatial data, get the centroid, and write the result out as json.
 
@@ -97,7 +97,7 @@ The JSON output can then be embedded into web applications as we do in the Web M
 
 
 
-### Project 2 - Query SQL Server Database with ArcPy
+### Project 2.2 - Query SQL Server Database with ArcPy
 
 Assignment two requires the programmers to query the sql server database using attribute values of the spatial data
 
@@ -137,10 +137,10 @@ For each feature in the parcel shapefile, use the code you developed in step 1 t
 ```
 
 
-## Web Maping Assignments
+## 3 Web Maping Assignments
 
 
-### Project 1 - Making simple web maps with our data
+### Project 3.1 - Making simple web maps with our data
 
 In the web mapping assignments we use the json and/or csv files we created with arcpy to build some web based maps with
 free open source tools like leaflet js
@@ -164,7 +164,7 @@ var marker = L.marker(36, 67], {icon: myIcon}).addTo(map);
 {"centroid":[67.11519357832525,36.70581137062923]}
 ```
 
-### Project 2 - Creating a CSV from a Shapefile and Displaying it on Geojson.IO
+### Project 3.2 - Creating a CSV from a Shapefile and Displaying it on Geojson.IO
 
 The second task introduces a site called geojson.io which makes it easy to make a web map from common spatial data
 formats. Students modify their scripts to produce CSV files and then simply drag them onto the geojson.io page
