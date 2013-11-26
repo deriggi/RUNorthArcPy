@@ -156,7 +156,16 @@ var map = L.mapbox.map('map',  'examples.map-9ijuk24y' ,{  center: [36.7046, 67.
 var marker = L.marker(36, 67], {icon: myIcon}).addTo(map);
 ```
 
-[1) JSON Points on a Map](https://docs.google.com/document/d/1XyVzYlqORZo7VEWlZOtqHNkyyKV1jiKAUseluYVKvW8/edit?usp=sharing)
+Here is the full code for one point on a map 
+(One Point on a Map) [https://github.com/deriggi/RUNorthArcPy/blob/master/lessons/py_1/py_1a_webJson/webclass/onepoint.html]
+
+Your task is to use the 157 parcel points as JSON you created in your previous assignment and display them on the web
+
+To do that, (add your data to thist template)[https://github.com/deriggi/RUNorthArcPy/blob/master/lessons/py_1/py_1a_webJson/webclass/manypoints.html]
+
+Parcels are actually polygons so it would be be better to represent the trash dump site data with markers. Let’s try it!
+
+Get the dump site data, convert it to json using your arcpy script, and add it the html file to see it on the web
 
 ```JavaScript
 // a tiny json object!
@@ -168,6 +177,22 @@ var marker = L.marker(36, 67], {icon: myIcon}).addTo(map);
 
 The second task introduces a site called geojson.io which makes it easy to make a web map from common spatial data
 formats. Students modify their scripts to produce CSV files and then simply drag them onto the geojson.io page
+
+In this assignment we use arcpy to make a CSV file and then we add it to the geojson.io site for viewing and sharing
+
+####Task
+
+Modify your geojson script so that it creates CSV instead. A CSV format looks like the following:
+
+```
+longitude, latitude,    parcelid,    area
+67.1495,    36.7046,    5,        400.34
+67.1395,    36.7146,    3,        352.23
+```
+
+Note that the first line is a header line and commas do not appear on the last element of each line
+Once you are happy with it. go to http://GeoJson.IO  and drag it on there to view the map
+You should now see it as a marker with popups for your attribute data! Share the map!
 
 [2) Creating CSV files and GeoJson.IO](https://docs.google.com/document/d/1n1tYgcQBd8I7Uxw94ChTBsWeGmwOZ8C7J5av8mxQ7aw/edit?usp=sharing)
 
