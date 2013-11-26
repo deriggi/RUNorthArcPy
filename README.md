@@ -137,7 +137,7 @@ For each feature in the parcel shapefile, use the code you developed in step 1 t
 ```
 
 
-## 3 Web Maping Assignments
+## 3 Web Mapping Assignments
 
 
 ### Project 3.1 - Making simple web maps with our data
