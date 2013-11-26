@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+  <meta name='viewport' content=
+  'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.js'></script>
+  
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.css' rel='stylesheet' />
+  
+
+  <!--[if lte IE 8]>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
+    <![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type=
+    'text/css' />
+
+    <style type="text/css">
+    /*<![CDATA[*/
+    body {
+
+      font-family: 'Raleway', sans-serif;
+      color: #3f3f3f;
+      height: 100%;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      padding:0px;
+    }
+    
+    .texty{
+      font-size:14pt;
+    }
+
+
+    
+    /*]]>*/
+    </style>
+
+    <title>One Point</title>
+  </head>
+
+  <body style='padding:0px'>
+
+   <div id='map' style='position:absolute; height:100%; width:100%;  overflow:hidden'> </div>
+
+ </div>
+
+ 
+
+
+ <script>
+ var map = L.mapbox.map('map',  'examples.map-9ijuk24y' ,{  center: [36.7046, 67.1495], zoom:13, scrollWheelZoom:false});
+
+ var myIcon = L.icon({
+  iconUrl: 'images/marker-icon.png',
+});
+
+
+
+ var onePoint = {
+  "centroid": [
+  67.115193578325,
+  36.705811370629
+  ],
+  "properties": {
+   "Parcel_ID": "10",
+   "Shape_Area": "571.475635931",
+   "Dist_No": "1",
+   "Shape_Leng": "107.387143989",
+   "Block_Numb": "21",
+   "OBJECTID": "55"
+ }
+}
+
+var marker = L.marker([onePoint.centroid[1], onePoint.centroid[0]], {icon: myIcon}).addTo(map);
+
+marker.bindPopup( "parcel: " + onePoint.properties.Parcel_ID  );
+
+
+
+
+</script>
+
+</body>
+</html>
