@@ -11,3 +11,23 @@ extensive API so understanding basic Python command structures is essential for 
 #### First Lessons
 
 
+#### ArcPy Assignments
+
+The first assignment requires writing an arcpy script to iterate through spatial data, get the centroid, and write the
+data out as json.  
+
+
+[Shapefile Centroid to JSON](https://docs.google.com/document/d/1paWDiVn_09vb8CHPGPbMIF_1BFhRGH1KVSTCe9DBGIM/edit)
+
+
+Assignment two requires the programmers to query the sql server database using attribute values of the spatial data
+
+
+[Query SQL Server From ArcPy](https://docs.google.com/document/d/10GhARtr_xj9JQ7BSkvfF34Su0UA3i2ITnAm-oUzG3fE/edit?usp=sharing)
+
+
+
+In retrospect it would have been easier to do a CSV example first, but these json files are an important
+part of the IFMS integration effort here
+
+The JSON format can then be embedded into web applications
