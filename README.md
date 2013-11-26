@@ -157,11 +157,11 @@ var marker = L.marker(36, 67], {icon: myIcon}).addTo(map);
 ```
 
 Here is the full code for one point on a map 
-(One Point on a Map) [https://github.com/deriggi/RUNorthArcPy/blob/master/lessons/py_1/py_1a_webJson/webclass/onepoint.html]
+[One Point on a Map] (https://github.com/deriggi/RUNorthArcPy/blob/master/lessons/py_1/py_1a_webJson/webclass/onepoint.html)
 
 Your task is to use the 157 parcel points as JSON you created in your previous assignment and display them on the web
 
-To do that, (add your data to thist template)[https://github.com/deriggi/RUNorthArcPy/blob/master/lessons/py_1/py_1a_webJson/webclass/manypoints.html]
+To do that, [add your data to thist template](https://github.com/deriggi/RUNorthArcPy/blob/master/lessons/py_1/py_1a_webJson/webclass/manypoints.html)
 
 Parcels are actually polygons so it would be be better to represent the trash dump site data with markers. Let’s try it!
 
