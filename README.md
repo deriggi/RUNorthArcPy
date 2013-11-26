@@ -38,7 +38,15 @@ The introductory lessons work through basic programming structures likes
 The first assignment requires writing an arcpy script to iterate through spatial data, get the centroid, and write the
 data out as json.
 
+
+[1) Shapefile Centroid to JSON](https://docs.google.com/document/d/1paWDiVn_09vb8CHPGPbMIF_1BFhRGH1KVSTCe9DBGIM/edit)
+
+
 ```python
+  #
+  # This example prints the object id and the centroid of each shape in the shapefile.
+  # It could be modified to print JSON
+  #
   # ===============================
   # change this line
   layerpath = "C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John.shp"
@@ -60,7 +68,7 @@ data out as json.
 ```
 
 
-[1) Shapefile Centroid to JSON](https://docs.google.com/document/d/1paWDiVn_09vb8CHPGPbMIF_1BFhRGH1KVSTCe9DBGIM/edit)
+
 
 
 Assignment two requires the programmers to query the sql server database using attribute values of the spatial data
@@ -68,10 +76,19 @@ Assignment two requires the programmers to query the sql server database using a
 
 [2) Query SQL Server From ArcPy](https://docs.google.com/document/d/10GhARtr_xj9JQ7BSkvfF34Su0UA3i2ITnAm-oUzG3fE/edit?usp=sharing)
 
+```python
+  sde_conn = arcpy.ArcSDESQLExecute(r"C:\\Users\\Administrator\\AppData\\Roaming\\ESRI\\Desktop10.2\\ArcCatalog\\Connection to DAIL13077.sde")
+  sql = "select PropertyID, District from IFMSDB.DBO.Property where District = {0} and Block = {1} and ParcelNo = {2}".format(1, 226, 4)          
+  sde_return = sde_conn.execute(sql)
+```
+
+
 In retrospect it would have been easier to do a CSV example first, but these json files are an important
 part of the IFMS integration effort here
 
 The JSON format can then be embedded into web applications as we do in the Web Mapping Assignments
+
+
 
 #### Web Maping Assignments
 
