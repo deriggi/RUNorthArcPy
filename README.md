@@ -36,7 +36,28 @@ The introductory lessons work through basic programming structures likes
 #### ArcPy Assignments
 
 The first assignment requires writing an arcpy script to iterate through spatial data, get the centroid, and write the
-data out as json. 
+data out as json.
+
+```python
+  # ===============================
+  # change this line
+  layerpath = "C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John.shp"
+  # ===============================
+
+  # use the current workspace
+  mxd = arcpy.mapping.MapDocument("CURRENT")
+        
+  # add the layer to the bottom
+  df = arcpy.mapping.ListDataFrames(mxd, "*")[0]
+  layerToAdd = arcpy.mapping.Layer(layerpath)
+  arcpy.mapping.AddLayer(df,layerToAdd,"BOTTOM")
+
+  # print attributes
+  cursor = arcpy.da.SearchCursor(layerToAdd, ['@OID','SHAPE@TRUECENTROID'])
+  for row in cursor:
+    print 'ObjectID: {0}    Centroid: {1} '.format(row[0], row[1])
+    
+```
 
 
 [1) Shapefile Centroid to JSON](https://docs.google.com/document/d/1paWDiVn_09vb8CHPGPbMIF_1BFhRGH1KVSTCe9DBGIM/edit)
