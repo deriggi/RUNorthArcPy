@@ -9,7 +9,7 @@ Lessons for basic Python programming and introductory ArcPy are used to introduc
 extensive API so understanding basic Python command structures is necessary for building stable and reusable ArcPy
 applications
 
-## 1.0 First Lessons
+## 1 First Lessons
 The introductory lessons work through basic programming structures likes
   1. printing and variables
   ```python
