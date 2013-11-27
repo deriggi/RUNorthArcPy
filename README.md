@@ -71,27 +71,27 @@ The JSON output can then be embedded into web applications as we do in the Web M
 
 
 ```python
-  #
-  # This example prints the object id and the centroid of each shape in the shapefile.
-  # It could be modified to print JSON
-  #
-  # ===============================
-  # change this line
-  layerpath = "C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John.shp"
-  # ===============================
+#
+# This example prints the object id and the centroid of each shape in the shapefile.
+# It could be modified to print JSON
+#
+# ===============================
+# change this line
+layerpath = "C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John.shp"
+# ===============================
 
-  # use the current workspace
-  mxd = arcpy.mapping.MapDocument("CURRENT")
-        
-  # add the layer to the bottom
-  df = arcpy.mapping.ListDataFrames(mxd, "*")[0]
-  layerToAdd = arcpy.mapping.Layer(layerpath)
-  arcpy.mapping.AddLayer(df,layerToAdd,"BOTTOM")
+# use the current workspace
+mxd = arcpy.mapping.MapDocument("CURRENT")
+      
+# add the layer to the bottom
+df = arcpy.mapping.ListDataFrames(mxd, "*")[0]
+layerToAdd = arcpy.mapping.Layer(layerpath)
+arcpy.mapping.AddLayer(df,layerToAdd,"BOTTOM")
 
-  # print attributes
-  cursor = arcpy.da.SearchCursor(layerToAdd, ['@OID','SHAPE@TRUECENTROID'])
-  for row in cursor:
-    print 'ObjectID: {0}    Centroid: {1} '.format(row[0], row[1])
+# print attributes
+cursor = arcpy.da.SearchCursor(layerToAdd, ['OID@','SHAPE@TRUECENTROID'])
+for row in cursor:
+  print 'ObjectID: {0}    Centroid: {1} '.format(row[0], row[1])
     
 ```
 
