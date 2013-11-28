@@ -190,6 +190,32 @@ longitude, latitude,    parcelid,    area
 67.1395,    36.7146,    3,        352.23
 ```
 
+```python
+#
+# This example prints the object id and the centroid of each shape in the shapefile.
+# It could be modified to print JSON
+#
+# ===============================
+# change this line
+layerpath = "C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John.shp"
+# ===============================
+
+# use the current workspace
+mxd = arcpy.mapping.MapDocument("CURRENT")
+      
+# add the layer to the bottom
+df = arcpy.mapping.ListDataFrames(mxd, "*")[0]
+layerToAdd = arcpy.mapping.Layer(layerpath)
+arcpy.mapping.AddLayer(df,layerToAdd,"BOTTOM")
+
+# print attributes
+print 'longitude, latitude, objectid'
+cursor = arcpy.da.SearchCursor(layerToAdd, ['SHAPE@TRUECENTROID', 'OID@' ])
+for row in cursor:
+  print ' {0}, {1}, {2} '.format(row[0][0], row[0][1], row[1])
+    
+```
+
 Note that the first line is a header line and commas do not appear on the last element of each line
 Once you are happy with it. go to http://GeoJson.IO  and drag it on there to view the map
 You should now see it as a marker with popups for your attribute data! Share the map!
