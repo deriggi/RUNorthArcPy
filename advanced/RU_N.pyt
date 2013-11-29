@@ -351,6 +351,20 @@ class LayerManager:
 
 
 class Intersector:
+    
+    def isSelectedCentroidAWithinLayerB(self, selectedLayer, layerB , fieldname):
+        layerManager = LayerManager()
+        
+        geom = layerManager.getFirstSelectedTrueCentroidGeom(selectedLayer)
+        cursor = arcpy.da.SearchCursor( layerB , [fieldname, 'SHAPE@'] )
+        response = []
+
+        for row in cursor:
+            if row[1] is not None and (row[1].contains(geom)):
+                response.append(  str(row[0]) )
+
+        return response
+
     # list the polygons that contain the centroid
     def isPointWithinNextLayer(self, selectedLayer, intersectlayerindex , fieldname):
         layerManager = LayerManager()

@@ -83,6 +83,25 @@ var marker = L.marker([onePoint.centroid[1], onePoint.centroid[0]], {icon: myIco
 marker.bindPopup( "parcel: " + onePoint.properties.Parcel_ID  );
 
 
+var twoPoint = {
+  "centroid": [
+  67.125193578325,
+  36.715811370629
+  ],
+  "properties": {
+   "Parcel_ID": "10",
+   "Shape_Area": "571.475635931",
+   "Dist_No": "1",
+   "Shape_Leng": "107.387143989",
+   "Block_Numb": "21",
+   "OBJECTID": "55"
+ }
+}
+
+var marker2 = L.marker([twoPoint.centroid[1], twoPoint.centroid[0]], {icon: myIcon}).addTo(map);
+
+marker2.bindPopup( "parcel: " + twoPoint.properties.Parcel_ID  );
+
 
 
 </script>

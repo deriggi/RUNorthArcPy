@@ -134,30 +134,79 @@ class PNGMaker:
         counter = 0
 
         theLayer = arcpy.mapping.Layer(layerpath)
+        # theLayer = lm.getLayer(0)
         
         rm = RandomStringMaker()
 
-        for record in rows:
+        # lm.addLayerToCurrent(theLayer)
+
+        # =====
+        # this works
+                # whereclause = arcpy.AddFieldDelimiters( theLayer , oidName ) + '= ' + str(5)
+                
+                # print whereclause
+
+                # randomname = rm.getOne(5);
+
+                # arcpy.MakeFeatureLayer_management(layerpath, randomname)
+
+                # arcpy.SelectLayerByAttribute_management(randomname, "NEW_SELECTION" , whereclause )
+                    
+                # lm.zoomAndExportPNG('C:/Users/jderiggi/Documents/afghramp/arcgisProjects/' + rm.getOne(5) )
+
+                # lm.removeLayer(theLayer)
+
+        #========
+
+        whereclause = arcpy.AddFieldDelimiters( theLayer , oidName ) + '= ' + str(5)        
+        print whereclause
+        randomname = rm.getOne(5);
+        arcpy.SelectLayerByAttribute_management(lm.getLayer(0), "NEW_SELECTION" , whereclause )
+        lm.zoomAndExportPNG('C:/Users/jderiggi/Documents/afghramp/arcgisProjects/' + rm.getOne(5) )
+        
+
+        #for record in rows:
             
             # works!
-            # whereclause = arcpy.AddFieldDelimiters( theLayer , oidName ) + '= ' + str(record[0])
-            whereclause = arcpy.AddFieldDelimiters( theLayer , oidName ) + '= ' + str(record[0])
+            
+            #whereclause = arcpy.AddFieldDelimiters( theLayer , oidName ) + '= ' + str(record[0])
 
             # the way to add pats to where clause
-            # whereclause += ' and ' + arcpy.AddFieldDelimiters( theLayer , 'Shape_Le_1' ) + '= ' + str(122.619452)
+            ## whereclause += ' and ' + arcpy.AddFieldDelimiters( theLayer , 'Shape_Le_1' ) + '= ' + str(122.619452)
             
-            print whereclause
+            #print whereclause
 
-            lm.addLayerToCurrent(theLayer)
-            arcpy.SelectLayerByAttribute_management(theLayer, "NEW_SELECTION" , whereclause )
             
-            lm.zoomAndExportPNG('C:/Users/jderiggi/Documents/afghramp/arcgisProjects/' + rm.getOne(5) )
+            #arcpy.SelectLayerByAttribute_management(theLayer, "NEW_SELECTION" , whereclause )
             
-            lm.removeLayer(theLayer)
+            #lm.zoomAndExportPNG('C:/Users/jderiggi/Documents/afghramp/arcgisProjects/' + rm.getOne(5) )
             
-            counter += 1
+            #counter += 1
+
+        #lm.removeLayer(theLayer)
         
-        print counter
+        #print counter
+
+
+    def makePngForEachFeatureAtIndex(self, layerIndex, workspace="CURRENT"):
+            
+            lm = LayerManager(workspace)
+            theLayer = lm.getLayer(layerIndex)
+            arcpy.SelectLayerByAttribute_management(theLayer, "CLEAR_SELECTION")
+
+            # get the oid for this name
+            oidName = lm.getLayerOIDName(theLayer)
+            rows = arcpy.da.SearchCursor(theLayer,[oidName])
+            counter = 0
+            rm = RandomStringMaker()
+
+            for record in rows:
+                whereclause = arcpy.AddFieldDelimiters( theLayer , oidName ) + '= ' + str(record[0])        
+                print whereclause
+                arcpy.SelectLayerByAttribute_management(theLayer, "NEW_SELECTION" , whereclause )
+                lm.zoomAndExportPNG('C:/Users/jderiggi/Documents/afghramp/arcgisProjects/' + rm.getOne(5) )
+            del lm
+            del theLayer
 
 
 
@@ -225,9 +274,9 @@ class LayerManager:
     def addSelectedFeature(self,whereclause, layer,newname,outwrkspace):
         arcpy.SelectLayerByAttribute_management(layer, "NEW_SELECTION" , whereclause )
         r = RandomStringMaker()
-        singleBlockLayerName = newname + r.getOne(6) 
-        arcpy.CopyFeatures_management(layer, outwrkspace+"/" + singleBlockLayerName )
-        self.addLayerToCurrent(outwrkspace + "/" + singleBlockLayerName )
+        #singleBlockLayerName = newname + r.getOne(6) 
+        #arcpy.CopyFeatures_management(layer, outwrkspace+"/" + singleBlockLayerName )
+        #self.addLayerToCurrent(outwrkspace + "/" + singleBlockLayerName )
 
     def addLayerToCurrent(self, layer):
         mxd = arcpy.mapping.MapDocument(self.workspace)
@@ -379,6 +428,7 @@ maker = PNGMaker()
 # maker.printLayerPaths()
 
 # maker.makePngForEachFeature('C:/Users/jderiggi/Documents/afghramp/gis_data/GIS_ Geodatabase.gdb/Kunduz_Data/Kunduz_Parcels', 'C:/Users/jderiggi/Documents/afghramp/arcgisProjects/Blank.mxd')
-maker.makePngForEachFeature('C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John_reproj.shp')
-# maker.makeReportForSingleFeature()
+# maker.makePngForEachFeatureAtIndex('C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John_reproj.shp')
+# maker.makePngForEachFeatureAtIndex(0)
+maker.makeReportForSingleFeature()
 
