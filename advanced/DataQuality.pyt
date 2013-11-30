@@ -137,8 +137,20 @@ class Tool(object):
         intersector = Intersector()
         layermanager = LayerManager()
 
-        parcels = parameters[4].valueAsText 
+        districts = parameters[0].valueAsText
+        districtNumAttribute = parameters[1].valueAsText
+
         blocks = parameters[2].valueAsText
+        blockNumAttribute = parameters[3].valueAsText
+
+        parcels = parameters[4].valueAsText 
+        
+        parcelDistrictAttributeName = parameters[5].valueAsText
+        parcelBlockAttributeName = parameters[6].valueAsText
+        
+        
+
+
 
         # arcpy.MakeFeatureLayer_management(parcels,"parcels_layer")
         # arcpy.MakeFeatureLayer_management(blocks,"blocks_layer")
@@ -146,24 +158,57 @@ class Tool(object):
         blockOidName = layermanager.getLayerOIDName( blocks )
         parcelOidName = layermanager.getLayerOIDName( parcels )
 
-        manyparcels = arcpy.da.SearchCursor(parcels ,[parcelOidName])
+        manyparcels = arcpy.da.SearchCursor(parcels ,[parcelOidName, parcelDistrictAttributeName, parcelBlockAttributeName])
         
         # todo, for each parcel check block and district attributes withintersections
         rm = RandomStringMaker()
         tempParcelsName = 'parcels_layer_{0}'.format(rm.getOne(5))
         arcpy.MakeFeatureLayer_management(parcels,tempParcelsName)
-
+        # =================================
         for parcel in manyparcels:
             whereclause = arcpy.AddFieldDelimiters( parcels , parcelOidName ) + '= ' + str(parcel[0])
 
             arcpy.SelectLayerByAttribute_management(tempParcelsName, "NEW_SELECTION" , whereclause )
             
-            response = intersector.isSelectedCentroidAWithinLayerB( tempParcelsName , blocks, blockOidName )
+
+            # blocks
+            # get block value for this parcel
+            parcelsBlock = layermanager.getFirstAttributeValue(tempParcelsName, parcelBlockAttributeName, parcelOidName, parcel[0] )
+
+            # is it actually in parcelsBlock?
+            blockwhereclause = arcpy.AddFieldDelimiters( blocks, blockNumAttribute ) + ' = ' + str( parcelsBlock )
+            messages.addMessage(blockwhereclause)            
+            response = intersector.isSelectedCentroidAWithinSpecificLayerB( tempParcelsName , blocks, blockNumAttribute, parcelsBlock )
+
+            intersectsWithBlock = False
 
             if len(response) > 0:
-                messages.addMessage('parcel {0} intersects with block {1}'.format(parcel[0], response[0]))
-            # else:
-                # messages.addMessage('{0} NOT intersect'.format(""))
+                if int(parcelsBlock) == int(response[0]):
+                    intersectsWithBlock = True
+                messages.addMessage('parcel {0} intersects with block {1} but attribute says with {2}  {3} '.format(parcel[0], response[0], parcelsBlock, intersectsWithBlock))
+
+
+
+            # districts
+            # get district value for this parcel
+            parcelsDistrict = layermanager.getFirstAttributeValue(tempParcelsName, parcelDistrictAttributeName, parcelOidName, parcel[0] )
+
+            # is it actually in parcelsBlock?
+            distwhereclause = arcpy.AddFieldDelimiters( districts , districtNumAttribute ) + ' = ' + str( parcelsDistrict )
+            messages.addMessage(distwhereclause)
+            x = 1
+            x=2
+            x = x+2
+            districtResponse = intersector.isSelectedCentroidAWithinSpecificLayerB( tempParcelsName, districts, districtNumAttribute, parcelsDistrict )
+
+            intersectsWithDistrict = False
+
+            if len(districtResponse) > 0:
+                if int(parcelsDistrict) == int(districtResponse[0]):
+                    intersectsWithDistrict = True
+                messages.addMessage('parcel {0} intersects with district {1} but attribute says with {2}  {3} '.format(parcel[0], districtResponse[0], parcelsDistrict, intersectsWithDistrict))
+            
+
 
         return
 
@@ -176,8 +221,16 @@ class LayerManager:
         
         return point
 
+    def getFirstAttributeValue(self, layer, attributename, oidname, oidvalue):
+        whereclause = arcpy.AddFieldDelimiters( layer , oidname ) + '= ' + str( oidvalue )
+        cursor = arcpy.da.SearchCursor(layer, attributename)
+
+        for row in cursor:
+            return row[0]
+
+        return
+
     def getFirstSelectedTrueCentroid(self, layer):
-        
         cursor = arcpy.da.SearchCursor( layer , ['SHAPE@TRUECENTROID'] )
         for row in cursor:
             return row[0]
@@ -206,6 +259,23 @@ class LayerManager:
 
 class Intersector:
     
+    def isSelectedCentroidAWithinSpecificLayerB(self, selectedLayer, layerB , fieldname, fieldValue):
+        layerManager = LayerManager()
+        
+        # centroid of selected layer
+        geom = layerManager.getFirstSelectedTrueCentroidGeom(selectedLayer)
+        
+        # test centroid with layerB
+        whereclause = arcpy.AddFieldDelimiters( layerB , fieldname ) + ' = ' + str( fieldValue )
+        cursor = arcpy.da.SearchCursor( layerB , [fieldname, 'SHAPE@'], whereclause )
+        response = []
+
+        for row in cursor:
+            if row[1] is not None and (row[1].contains(geom)):
+                response.append(  str(row[0]) )
+
+        return response
+
     def isSelectedCentroidAWithinLayerB(self, selectedLayer, layerB , fieldname):
         layerManager = LayerManager()
         
