@@ -168,16 +168,13 @@ class Tool(object):
         for parcel in manyparcels:
             whereclause = arcpy.AddFieldDelimiters( parcels , parcelOidName ) + '= ' + str(parcel[0])
 
-            arcpy.SelectLayerByAttribute_management(tempParcelsName, "NEW_SELECTION" , whereclause )
-            
-
             # blocks
             # get block value for this parcel
-            parcelsBlock = layermanager.getFirstAttributeValue(tempParcelsName, parcelBlockAttributeName, parcelOidName, parcel[0] )
+            parcelsBlock = parcel[2]
 
             # is it actually in parcelsBlock?                                                       # have to ensure this is just a number
-            blockwhereclause = arcpy.AddFieldDelimiters( blocks, blockNumAttribute ) + ' = ' + str( parcelsBlock )
-            messages.addMessage(blockwhereclause)            
+                        
+            arcpy.SelectLayerByAttribute_management(tempParcelsName, "NEW_SELECTION" , whereclause )
             response = intersector.isSelectedCentroidAWithinSpecificLayerB( tempParcelsName , blocks, blockNumAttribute, parcelsBlock )
 
             intersectsWithBlock = False
@@ -193,14 +190,9 @@ class Tool(object):
             # get district value for this parcel
             parcelsDistrict = layermanager.getFirstAttributeValue(tempParcelsName, parcelDistrictAttributeName, parcelOidName, parcel[0] )
 
-            # is it actually in parcelsBlock?                                                           # have to ensure this is just a number
-            distwhereclause = arcpy.AddFieldDelimiters( districts , districtNumAttribute ) + ' = ' + str( parcelsDistrict )
-            messages.addMessage(distwhereclause)
-            x = 1
-            x=2
-            x = x+2
+            # is it actually in parcelsDistrict?                                                           # have to ensure this is just a number
+            
             districtResponse = intersector.isSelectedCentroidAWithinSpecificLayerB( tempParcelsName, districts, districtNumAttribute, parcelsDistrict )
-
             intersectsWithDistrict = False
 
             if len(districtResponse) > 0:
