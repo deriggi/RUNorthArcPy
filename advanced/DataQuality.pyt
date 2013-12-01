@@ -175,7 +175,7 @@ class Tool(object):
             # get block value for this parcel
             parcelsBlock = layermanager.getFirstAttributeValue(tempParcelsName, parcelBlockAttributeName, parcelOidName, parcel[0] )
 
-            # is it actually in parcelsBlock?
+            # is it actually in parcelsBlock?                                                       # have to ensure this is just a number
             blockwhereclause = arcpy.AddFieldDelimiters( blocks, blockNumAttribute ) + ' = ' + str( parcelsBlock )
             messages.addMessage(blockwhereclause)            
             response = intersector.isSelectedCentroidAWithinSpecificLayerB( tempParcelsName , blocks, blockNumAttribute, parcelsBlock )
@@ -193,7 +193,7 @@ class Tool(object):
             # get district value for this parcel
             parcelsDistrict = layermanager.getFirstAttributeValue(tempParcelsName, parcelDistrictAttributeName, parcelOidName, parcel[0] )
 
-            # is it actually in parcelsBlock?
+            # is it actually in parcelsBlock?                                                           # have to ensure this is just a number
             distwhereclause = arcpy.AddFieldDelimiters( districts , districtNumAttribute ) + ' = ' + str( parcelsDistrict )
             messages.addMessage(distwhereclause)
             x = 1
