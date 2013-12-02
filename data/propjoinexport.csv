@@ -1,40 +1,5 @@
 ﻿FID	Shape	OBJECTID	Dist_No	Parcel_ID	Block_Numb	Shape_Leng	Shape_Area	prop_pk	PropertyID	SerialNumber	PropertyRegNo	PropertyType	PropertyUsage	QabalaNo	District	Area	Guzer	Block	StreetNameOrNo	ParcelNo	NorthSide	SouthSide	EastSide	WestSide	UserID	GISCode	Unit	ParentID	ESRI_OID
-4	Polygon	5	1	9	28	64.521162	249.51546	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-6	Polygon	7	1	4	28	64.536181	262.096349	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-10	Polygon	11	1	3	28	61.003087	226.472312	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-17	Polygon	18	1	36	15	155.207438	1142.049121	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-18	Polygon	19	1	3	15	67.952648	261.207677	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-27	Polygon	28	1	28	15	91.412161	504.152756	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-29	Polygon	30	1	4	15	58.896784	201.849076	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-39	Polygon	40	1	15	15	38.934246	94.315126	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-44	Polygon	45	1	23	15	60.738995	231.309553	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-49	Polygon	50	1	39	15	46.87173	120.225275	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-51	Polygon	52	1	37	15	149.958824	1198.563527	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-55	Polygon	56	1	20	21	101.132746	515.430319	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-60	Polygon	61	1	25	21	55.426735	161.027855	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-62	Polygon	63	1	18	21	111.316058	460.306317	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-66	Polygon	67	1	23	21	62.559182	205.894494	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-69	Polygon	70	1	16	21	56.161862	181.190554	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-71	Polygon	72	1	25	20	51.577926	164.288043	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-72	Polygon	73	1	27	20	54.006158	187.246113	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-74	Polygon	75	1	26	20	52.821351	153.10372	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-79	Polygon	80	1	34	20	44.934135	106.850101	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-81	Polygon	82	1	36	20	86.239265	436.523054	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-85	Polygon	86	1	7	20	103.655076	467.401754	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-91	Polygon	92	1	39	20	83.810426	405.340114	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-95	Polygon	96	1	38	20	144.240921	907.855382	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-106	Polygon	107	1	2	21	74.273379	309.641583	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-108	Polygon	109	1	1	21	165.145122	1479.087022	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-115	Polygon	116	1	32	21	61.852646	223.625176	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-116	Polygon	117	1	7	21	53.240778	156.275195	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-119	Polygon	120	1	8	21	70.000476	275.925294	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-122	Polygon	123	1	19	360	88.245568	452.554809	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-127	Polygon	128	1	4	360	88.340248	449.983502	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-137	Polygon	138	1	16	360	87.278511	440.551256	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-138	Polygon	139	1	13	360	87.214106	442.846294	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-139	Polygon	140	1	22	360	119.023093	883.629087	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-152	Polygon	153	1	45	15	50.549425	134.007447	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
-156	Polygon	157	1	18	360	86.821659	433.304233	-1	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>	<Null>
+
 19	Polygon	20	1	1	15	82.419371	403.802929	179	179	180	181	خانه	مالک	180	1	گله جوازخانه	1	15	گله جوازخانه	1	محمد رازق	کوچه 	خانه	خانه	1	11151	<Null>	<Null>	1
 13	Polygon	14	1	1	28	53.726721	108.460843	180	180	225	226	خانه	مالک	225	1	عرب ها	1	28	عرب ها	1	0	0	0	0	1	01-01-028-001	<Null>	<Null>	2
 20	Polygon	21	1	2	15	64.265244	259.398354	181	181	181	182	خانه	مالک	181	1	گله جوازخانه	1	15	گله جوازخانه	2	خانه	کوچه	کوچه	کوچه	1	01-01-015-002	<Null>	<Null>	3
