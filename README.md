@@ -9,7 +9,7 @@ Add a sql server connection
 Use the add field button to add a blank field and default it to -1
 
 ## 3 - Run the python script to modify the new field
-
+[field modifier code] (https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/pkattacher.py)
 
 
 # Python GIS Development at RAMP UP North
