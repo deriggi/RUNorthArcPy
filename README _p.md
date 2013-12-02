@@ -1,7 +1,7 @@
 # Integrating Spatial Data With the IFMS
 These are the instructions for doing a sample integration with the spatial data
 
-## 1 - Connect to database in Arc Catalog
+## 1 - پله پوري د ډېټابېز ته
 Add a sql server connection
 
 
