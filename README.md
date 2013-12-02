@@ -8,7 +8,10 @@ Add a sql server connection
 ## 2 - Add a field to the parcel shapefile
 Use the add field button to add a blank field and default it to -1
 
-## 3 - Run the python script to modify the new field
+## 3 - Modify the python script to work with your system
+
+  modify the shapefile path, the sql data source, and the primary key namme
+
 [field modifier code] (https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/pkattacher.py)
 
 
