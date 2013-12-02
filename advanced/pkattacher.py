@@ -134,6 +134,7 @@ def run_it():
 	# sde_conn = arcpy.ArcSDESQLExecute(r"C:\\Users\\Administrator\\AppData\\Roaming\\ESRI\\Desktop10.2\\ArcCatalog\\Connection to DAIL13077.sde")
 	parcels = 'C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John_reproj.shp'
 	connection_string = r'C:/Users/Administrator/AppData/Roaming/ESRI/Desktop10.2/ArcCatalog/Connection to DAIL13077.sde'
+	primaryKeyName = 'prop_pk'
 	# ========================================================
 
 
@@ -145,7 +146,7 @@ def run_it():
 	lm = LayerManager()
 	parcelOidName = lm.getLayerOIDName( parcels )
 
-	manyparcels = arcpy.da.UpdateCursor( parcels , [ parcelOidName, 'prop_pk', 'Dist_No', 'Block_Numb', 'Parcel_ID'])
+	manyparcels = arcpy.da.UpdateCursor( parcels , [ parcelOidName, primaryKeyName, 'Dist_No', 'Block_Numb', 'Parcel_ID'])
 	
 	db = DBManager()
 
