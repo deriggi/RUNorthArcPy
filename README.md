@@ -19,12 +19,7 @@ Use the add field button to add a blank field and default it to -1
 execfile('<path to pkattacher.py>')
 ```
 
-
-## 5 - Verify results by looking at the attribute table
-
-
-
-
+## 5 - Do the join using the primary key from the property table
 
 
 # Python GIS Development at RAMP UP North
