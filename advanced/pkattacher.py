@@ -76,11 +76,11 @@ class LayerManager:
         return fieldsList
 
 class DBManager:
-	def queryDatabase(self, district, block, parcel):
+	def queryDatabase(self, connection_string, district, block, parcel):
         
 		try:
             
-			sde_conn = arcpy.ArcSDESQLExecute(r"C:/Users/Administrator/AppData/Roaming/ESRI/Desktop10.2/ArcCatalog/Connection to DAIL13077.sde")
+			sde_conn = arcpy.ArcSDESQLExecute(connection_string)
 
 			# sql = "select * from IFMSDB.DBO.Property where District = {0} and Block = {1} and ParcelNo = {2}".format(district, block, parcel)
 
@@ -131,8 +131,9 @@ def testDB():
 def run_it():
 	# ========================================================
 	# sde connection - change this to your path
-	sde_conn = arcpy.ArcSDESQLExecute(r"C:\\Users\\Administrator\\AppData\\Roaming\\ESRI\\Desktop10.2\\ArcCatalog\\Connection to DAIL13077.sde")
+	# sde_conn = arcpy.ArcSDESQLExecute(r"C:\\Users\\Administrator\\AppData\\Roaming\\ESRI\\Desktop10.2\\ArcCatalog\\Connection to DAIL13077.sde")
 	parcels = 'C:/Users/jderiggi/Documents/afghramp/gis_data/Parcels_John_reproj.shp'
+	connection_string = r'C:/Users/Administrator/AppData/Roaming/ESRI/Desktop10.2/ArcCatalog/Connection to DAIL13077.sde'
 	# ========================================================
 
 
@@ -153,7 +154,7 @@ def run_it():
 		# whereclause = arcpy.AddFieldDelimiters( parcels , parcelOidName ) + ' = ' + str( parcel[0] )
 		print 'on parcel oid {0}  {1}  {2}  {3}  {4}'.format(parcel[0], parcel[1], parcel[2], parcel[3], parcel[4])
 
-		pk = db.queryDatabase(parcel[2],parcel[3],parcel[4])
+		pk = db.queryDatabase(connection_string, parcel[2],parcel[3],parcel[4])
 		if pk is not None:
 			parcel[1] = pk
 			manyparcels.updateRow(parcel)
