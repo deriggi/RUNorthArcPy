@@ -1,3 +1,17 @@
+# Integrating Spatial Data With the IFMS
+These are the instructions for doing a sample integration with the spatial data
+
+## 1 - Connect to database in Arc Catalog
+Add a sql server connection
+
+
+## 2 - Add a field to the parcel shapefile
+Use the add field button to add a blank field and default it to -1
+
+## 3 - Run the python script to modify the new field
+[field modifier code] (https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/pkattacher.py)
+
+
 # Python GIS Development at RAMP UP North
 Welcome to the RAMP UP North GIS Unit's GitHub Site! This site contains the Python examples, lessons,
 and projects we will be using for this project. We are learning Python so that we can build the software
