@@ -14,6 +14,11 @@ Use the add field button to add a blank field and default it to -1
 
 [field modifier code] (https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/pkattacher.py)
 
+## 4 - Run the python script from ArcGIS
+
+```
+execfile('<path to pkattacher.py>')
+'''
 
 # Python GIS Development at RAMP UP North
 Welcome to the RAMP UP North GIS Unit's GitHub Site! This site contains the Python examples, lessons,
