@@ -17,6 +17,8 @@ In the driver function (the one that is first called by the script) modify the s
 [field modifier code] (https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/pkattacher.py)
 
 ## 4 - Run the python script from ArcGIS
+From the ArcPy window in ArcGIS run the script to attach the values from the database to the attribute table
+
 ```python
 execfile('<path to pkattacher.py>')
 ```
