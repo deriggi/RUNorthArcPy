@@ -6,11 +6,13 @@ Add a sql server connection
 
 
 ## 2 - Add a field to the parcel shapefile
-Use the add field button to add a blank field and default it to -1
+Open the attribute table use the 'Add field..' button to add a blank field and default it to -1. The data type of the
+field needs to match that of the one you are joining too, and the one being added to the table.
+
 
 ## 3 - Modify the python script to work with your system
 
-  modify the shapefile path, the sql data source, and the primary key namme
+In the driver function (the one that is first called by the script) modify the shapefile path, the sql data source, and the primary key name so it matches your environment. This may be converted into an ArcGIS tool so the user can simply work with the standard ArcGIS interface 
 
 [field modifier code] (https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/pkattacher.py)
 
