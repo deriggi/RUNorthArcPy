@@ -20,7 +20,8 @@ execfile('<path to pkattacher.py>')
 ```
 
 ## 5 - Join the shapefile to the SQL Server table
-
+Use the join function in ArcGIS to join the data to SQLServer. Join on the new column in the attribute table to the
+corresponding column in SQL Server
 
 # Python GIS Development at RAMP UP North
 Welcome to the RAMP UP North GIS Unit's GitHub Site! This site contains the Python examples, lessons,
