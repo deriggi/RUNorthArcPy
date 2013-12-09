@@ -2,8 +2,8 @@
 These are the instructions for doing a sample integration with the spatial data
 
 ## 1 - Connect to database in Arc Catalog
-Add a sql server connection
-
+From the ArcCatalog section of ArcGIS, go the the Database Connections section and add a sql server connection to the 
+IFMS database.
 
 ## 2 - Add a field to the parcel shapefile
 Open the attribute table use the 'Add field..' button to add a blank field and default it to -1. The data type of the
