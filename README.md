@@ -45,7 +45,14 @@ The introductory lessons work through basic programming structures likes
       print s
 
   ```
-  2. string manipulation
+  2. string find function
+```python
+x = 'a nice day'
+print 'a is at index: ' + str(x.find('a'))
+print 'c is at index: ' + str(x.find('c'))
+print 'nice is at index: ' + str(x.find('nice'))
+```
+
   3. conditional statements
   4. loops
 
