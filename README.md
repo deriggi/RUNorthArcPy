@@ -39,14 +39,14 @@ applications
 ## 1 First Lessons
 The introductory lessons work through basic programming structures likes
   
-1. printing and variables
+### printing and variables
 ```python
 bicycles = 5
 s = "i have {0} bicycles".format(bicycles)
 print s
 ```
 
-2. string find function
+### string find function
 ```python
 x = 'a nice day'
 print 'a is at index: ' + str(x.find('a'))
@@ -54,31 +54,43 @@ print 'c is at index: ' + str(x.find('c'))
 print 'nice is at index: ' + str(x.find('nice'))
 ```
 
-3. conditional statements
+### conditional statements
+
 ```python
 if 1 < 5:
         print 'one is less than 5'
-
 a = 3
 b = 4
+
 if a == b:
         print 'a and b are equal '
 else:
         print 'a is not equal to b '
 ```
 
-4. loops
+### loops and lists
 
 ```python
 provinces = ['Balkh', 'Badakshan', 'Baghlan', 'Faryab', 'Jawzjan', 'Kunduz', 'Samangan', 'Takhar']
 for p in provinces:
   print 'a province name: {0}'.format(p)
 ```
+
+### functions
+
+```python
+def appendToFile(filePath, line):
   
-5. functions
+  # open a file for appending
+  fileHandle = open(filePath, 'a')
+  
+  # write the file and add a new line
+  fileHandle.write((line + '\n'))
+  
+  # IMPORTANT! close the file
+  fileHandle.close()
+```
 
-
-6. writing text files
   
 [code for the first lessons track](https://github.com/deriggi/RUNorthArcPy/tree/master/lessons/py_0)
 
