@@ -16,7 +16,7 @@ In the driver function (the one that is first called by the script) modify the s
 
 [field modifier code] (https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/pkattacher.py)
 
-If it finished properly, then every matching record in the database should have a updadted (not -1) value in the new field
+
 
 ## 4 - Run the python script from ArcGIS
 From the ArcPy window in ArcGIS run the script to attach the values from the database to the attribute table
@@ -24,6 +24,9 @@ From the ArcPy window in ArcGIS run the script to attach the values from the dat
 ```python
 execfile('<path to pkattacher.py>')
 ```
+
+If it finished properly, then every matching record in the database should have a updadted (not -1) value in the new field
+
 
 ## 5 - Join the shapefile to the SQL Server table
 Use the join function in ArcGIS to join the data to SQLServer. Join on the new column in the attribute table to the
