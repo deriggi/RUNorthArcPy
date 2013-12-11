@@ -44,7 +44,10 @@ extensive API so understanding basic Python command structures is necessary for 
 applications
 
 ## 1 First Lessons
-The introductory lessons work through basic programming structures likes
+The introductory lessons work through basic programming structures
+
+[intro lesson code](https://github.com/deriggi/RUNorthArcPy/tree/master/lessons/py_0)
+  
   
 ### printing and variables
 ```python
