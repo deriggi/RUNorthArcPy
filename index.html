@@ -44,28 +44,30 @@
 
         <div id="menu">
             <div class="pure-menu pure-menu-open">
-                <a class="pure-menu-heading" href="http://purecss.io/">Pure</a>
+                <span class="pure-menu-heading" > RU-N</span>
 
                 <ul>
-                    <li><span id='base'>Base</span></li>
-                    <li><a href="http://purecss.io/grids/">Grids</a></li>
-                    <li><a href="http://purecss.io/forms/">Forms</a></li>
-                    <li><a href="http://purecss.io/buttons/">Buttons</a></li>
-                    <li><a href="http://purecss.io/tables/">Tables</a></li>
-                    <li><a href="http://purecss.io/menus/">Menus</a></li>
+                    <li id='base'><span >Tech Items</span></li>
+                    <li><span >Outstanding Items</span></li>
+                    <li><span >Architecture</span></li>
+                    <li><span >Software</span></li>
+                    <li><span >Safayi Data</span></li>
 
-                    <li class="pure-menu-selected menu-item-divided">
+
+                    <!--li class="pure-menu-selected menu-item-divided">
                         <a href="http://purecss.io/layouts/">Layouts</a>
-                    </li>
-                    <li><a href="http://purecss.io/customize/">Customize</a></li>
-                    <li><a href="http://purecss.io/extend/">Extend</a></li>
-                    <li><a href="http://blog.purecss.io/">Blog</a></li>
-                    <li><a href="https://github.com/yui/pure/releases/">Releases</a></li>
+                    </li-->
+                    <li><span>GIS Workflow</span></li>
+                    <li><span>Parcels</span></li>
+                    <li><span>Data Quality</span></li>
+                    <li><span>Python Training</span></li>
+                    <li><span>Web Cartography</span></li>
+                 
 
                     <li class="menu-item-divided">
-                        <a href="http://yui.github.io/skinbuilder/?mode=pure">Skin Builder</a>
+                        <span><!--Maps--> </span>
                     </li>
-                    <li><a href="http://yuilibrary.com/">YUI Library</a></li>
+                    <li><span><!--IFMS--> </span></li>
                 </ul>
             </div>
         </div>
@@ -340,6 +342,7 @@
 
         $('#base').click(function(){
             $('.tilemill').scroll();
+            $(this).addClass('pure-menu-selected menu-item-divided')
         })
 
         //resizeOnDelay();

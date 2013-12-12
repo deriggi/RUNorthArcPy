@@ -151,6 +151,9 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
         #menu .pure-menu-selected a {
             color: #fff;
         }
+         #menu .pure-menu-selected span {
+            color: #fff;
+        }
 
     /*
     This styles the menu heading.
