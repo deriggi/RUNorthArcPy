@@ -47,21 +47,21 @@
                 <span class="pure-menu-heading" > RU-N</span>
 
                 <ul>
-                    <li id='base'><span >Tech Items</span></li>
-                    <li><span >Outstanding Items</span></li>
-                    <li><span >Architecture</span></li>
-                    <li><span >Software</span></li>
-                    <li><span >Safayi Data</span></li>
+                    <li id='techitems'><span >Tech Items</span></li>
+                    
+                    <li id='architecture'><span >Architecture</span></li>
+                    <li id='software'><span >Software</span></li>
+                    <li id='ifmsdata'><span >IFMS Data</span></li>
 
 
                     <!--li class="pure-menu-selected menu-item-divided">
                         <a href="http://purecss.io/layouts/">Layouts</a>
                     </li-->
-                    <li><span>GIS Workflow</span></li>
-                    <li><span>Parcels</span></li>
-                    <li><span>Data Quality</span></li>
-                    <li><span>Python Training</span></li>
-                    <li><span>Web Cartography</span></li>
+                    <li id='workflow'><span>GIS Workflow</span></li>
+                    
+                    <li id='dataquality'><span>Data Quality</span></li>
+                    <li id='pythontraining'><span>Python Training</span></li>
+                    <li id='tilemill'><span>Web Cartography</span></li>
                  
 
                     <li class="menu-item-divided">
@@ -83,7 +83,7 @@
             <div class="content">
 
 
-                <h2 class="content-subhead">Technology Items Developed for RU North</h2>
+                <h2 class="content-subhead techitems">Technology Items Developed for RU North</h2>
 
                 <table class= 'pure-table pure-table-bordered '>
                     <thead>
@@ -144,7 +144,7 @@
 
 
 
-                <h2 class="content-subhead">Overall Architecture and Identification of Two Users</h2>
+                <h2 class="content-subhead architecture">Overall Architecture and Identification of Two Users</h2>
                 <p>
                     Integrating the Safayi registration data with the spatial data was one of the main objectives of the STTA. The purpose of the integration is to provide functionality for two distinct users: the IFMS user and the GIS Analyst user.
                 </p>
@@ -159,7 +159,7 @@
                 </div>
 
 
-                <h2 class="content-subhead">Devlopment of Software for Two Use Cases</h2>
+                <h2 class="content-subhead software">Devlopment of Software for Two Use Cases</h2>
                 <p>
                     The data integration effort was divided into two separate software packages, one for the GIS user and one for the IFMS user. Each package was placed on the free open source repository called GitHub. The repo makes it easy to combine documentation and raw code together in one coherent searchable web site
                 </p>
@@ -226,7 +226,7 @@
                     </tbody>
                 </table>
 
-                <h2 class="content-subhead">Safayi Data Assessment</h2>
+                <h2 class="content-subhead ifmsdata">IFMS Data Assessment</h2>
                 <p>
                     With the survey data transmission not yet complete, the 3000 sample records from the Mazar-e Sharif IFMS were used to analyze the structure and contents of the database. The goals for the DB analysis were:
                 </p>
@@ -251,7 +251,7 @@
 
                 </p>
 
-                <h2 class="content-subhead">Safayi survey and GIS Team Workflow</h2>
+                <h2 class="content-subhead workflow">Safayi Survey and GIS Team Workflow</h2>
 
                 <p>
                     The survey teams and the GIS team coordinate on data collection and parcel boundary identification. Maps are first created by the GIS team and then delivered to the property registration team to serve as a guide for data collection. Parcel IDs are assigned to each property and written on paper satellite images of each block. The maps are delivered back to the GIS team where another data entry process updates the spatial data with the new parcel IDs.
@@ -259,7 +259,7 @@
 
 
                 <div class='pure-g-r'>
-                    <p> <img  src = "images/workflow.png" alt='workflow'/> </p>
+                    <p> <img  src = "images/workflow2.png" alt='workflow'/> </p>
                 </div>
 
                 <div id='log'>
@@ -271,7 +271,7 @@
 
 
 
-                <h2 class="content-subhead">Data Quality Tool</h2>
+                <h2 class="content-subhead dataquality">Data Quality Tool</h2>
 
                 <p>
                     A tool was built to validate the attribute fields in the spatial data. Specifically, each parcel in the dataset lists the District, Block, and sometimes the Guzer in which the parcel belongs.
@@ -298,7 +298,7 @@
                     <p> <img  src = "images/dqtool.png" alt='mosque'/> </p>
                 </div>
 
-                <h2 class="content-subhead">Python Training</h2>
+                <h2 class="content-subhead pythontraining">Python Training</h2>
                 <p>
                     Introductory Python programming was provided most of the last 10 days of the effort. The purpose of the training was to get the team comfortable working with code and to help them apply Python to make GIS tasks easier, less repetitive, and less susceptible to error. Also, the integration software developed for for the GIS User was written in Python so familiarizing the team with the code should make them more capable of operating the integration.
 
@@ -340,10 +340,61 @@
 
     $(document).ready(function(){
 
-        $('#base').click(function(){
+        $('#architecture').click(function(){
+            $('.architecture').scroll();
+
+            LinkSelectorManager.setSelectedLink($(this));
+
+        });
+
+        $('#techitems').click(function(){
+            $('.techitems').scroll();
+            LinkSelectorManager.setSelectedLink($(this));
+
+        });
+
+
+        $('#software').click(function(){
+            $('.software').scroll();
+            LinkSelectorManager.setSelectedLink($(this));
+
+        });
+
+
+        $('#ifmsdata').click(function(){
+            $('.ifmsdata').scroll();
+            LinkSelectorManager.setSelectedLink($(this));
+
+        });
+
+        $('#dataquality').click(function(){
+            $('.dataquality').scroll();
+            LinkSelectorManager.setSelectedLink($(this));
+        });
+
+        $('#workflow').click(function(){
+            $('.workflow').scroll();
+            LinkSelectorManager.setSelectedLink($(this));
+        });
+
+
+        $('#pythontraining').click(function(){
+            $('.pythontraining').scroll();
+            LinkSelectorManager.setSelectedLink($(this));
+        });
+
+
+        $('#pythontraining').click(function(){
+            $('.pythontraining').scroll();
+            LinkSelectorManager.setSelectedLink($(this));
+        });
+
+
+
+        $('#tilemill').click(function(){
             $('.tilemill').scroll();
-            $(this).addClass('pure-menu-selected menu-item-divided')
-        })
+            LinkSelectorManager.setSelectedLink($(this));
+        });
 
         //resizeOnDelay();
 
@@ -383,6 +434,24 @@
             }
         }
     })();
+
+
+    var LinkSelectorManager = (function(){
+        var selectedLink = null;
+
+        return{
+            setSelectedLink : function(selected){
+                // unselect previous
+                if (selectedLink != null){
+                    $(selectedLink).removeClass('pure-menu-selected menu-item-divided')
+                }
+                $(selected).addClass('pure-menu-selected menu-item-divided');
+                selectedLink = selected
+            }
+        }
+    })();
+
+
 
 
     function loadData(){
@@ -429,32 +498,23 @@
             
             // display
             DisplayStatusHolder.setDisplayedStatus(chartId,true)
-            var timeoutID = window.setTimeout(resizeGame,200);
+            var timeoutID = window.setTimeout(resizeChartCanvas,200);
             TimeoutHolder.setTimeout(timeoutID)
 
         }
-
-        
-
 
     }
 
 
     function resizeOnDelay(){
         var ga = document.getElementById('myChart');
+        var timeoutID = window.setTimeout(resizeChartCanvas,600);
+        TimeoutHolder.setTimeout(timeoutID)    
         
-        
-        
-            var timeoutID = window.setTimeout(resizeGame,600);
-            TimeoutHolder.setTimeout(timeoutID)    
-        
-
-        
-
 
     }
 
-    function resizeGame() {
+    function resizeChartCanvas() {
         var gameArea = document.getElementById('myChart');
         var ctx = gameArea.getContext("2d")
         var widthToHeight = 2 / 1;
@@ -462,6 +522,17 @@
 
         if(newWidth > 800){
             newWidth = 800
+            //$('#log').append('<p>draw</p>')
+            var newHeight = newWidth/2
+            gameArea.style.height = newHeight + 'px';
+            gameArea.style.width = newWidth + 'px';
+
+
+
+            var gameCanvas = document.getElementById('myChart');
+            gameCanvas.width = newWidth;
+            gameCanvas.height = newHeight;
+            loadData()
         }
         else if (newWidth < 300 && ctx){
                 // Store the current transformation matrix
@@ -472,18 +543,8 @@
                 ctx.clearRect(0, 0, gameArea.width, gameArea.height);
 
                 return
-            }
-        //$('#log').append('<p>draw</p>')
-        var newHeight = newWidth/2
-        gameArea.style.height = newHeight + 'px';
-        gameArea.style.width = newWidth + 'px';
-
-
-
-        var gameCanvas = document.getElementById('myChart');
-        gameCanvas.width = newWidth;
-        gameCanvas.height = newHeight;
-        loadData()
+        }
+        
     }
 
 

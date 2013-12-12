@@ -45,23 +45,23 @@ The content `<div>` is where all your content goes.
 }
 
 .header {
-     margin: 0;
-     color: #333;
-     text-align: center;
-     padding: 2.5em 2em 0;
-     border-bottom: 1px solid #eee;
- }
-    .header h1 {
-        margin: 0.2em 0;
-        font-size: 3em;
-        font-weight: 300;
-    }
-     .header h2 {
-        font-weight: 300;
-        color: #ccc;
-        padding: 0;
-        margin-top: 0;
-    }
+   margin: 0;
+   color: #333;
+   text-align: center;
+   padding: 2.5em 2em 0;
+   border-bottom: 1px solid #eee;
+}
+.header h1 {
+    margin: 0.2em 0;
+    font-size: 3em;
+    font-weight: 300;
+}
+.header h2 {
+    font-weight: 300;
+    color: #ccc;
+    padding: 0;
+    margin-top: 0;
+}
 
 .content-subhead {
     margin: 50px 0 20px 0;
@@ -94,7 +94,7 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
     */
     #menu span {
         display: block;
-    line-height: 1.5em;
+        line-height: 1.5em;
         color: #999;
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
@@ -111,8 +111,8 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
     /*
     Remove all background/borders, since we are applying them to #menu.
     */
-     #menu .pure-menu,
-     #menu .pure-menu ul {
+    #menu .pure-menu,
+    #menu .pure-menu ul {
         border: none;
         background: transparent;
     }
@@ -140,8 +140,7 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
     /*
     This styles the selected menu item `<li>`.
     */
-    #menu .pure-menu-selected,
-    #menu .pure-menu-heading {
+    #menu .pure-menu-selected{
         /**background: #1f8dd6;**/
         background: #006289;
     }
@@ -151,7 +150,7 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
         #menu .pure-menu-selected a {
             color: #fff;
         }
-         #menu .pure-menu-selected span {
+        #menu .pure-menu-selected span {
             color: #fff;
         }
 
@@ -165,7 +164,7 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
     }
 
 
-/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+    /* -- Dynamic Button For Responsive Menu -------------------------------------*/
 
 /*
 The button to open/close the Menu is custom-made and not part of Pure. Here's
@@ -188,34 +187,34 @@ small screens.
     padding: 2.2em 1.6em;
 }
 
-    .pure-menu-link:hover,
-    .pure-menu-link:focus {
-        background: #000;
-    }
+.pure-menu-link:hover,
+.pure-menu-link:focus {
+    background: #000;
+}
 
-    .pure-menu-link span {
-        position: relative;
-        display: block;
-    }
+.pure-menu-link span {
+    position: relative;
+    display: block;
+}
 
-    .pure-menu-link span,
-    .pure-menu-link span:before,
-    .pure-menu-link span:after {
-        background-color: #fff;
-        width: 100%;
-        height: 0.2em;
-    }
+.pure-menu-link span,
+.pure-menu-link span:before,
+.pure-menu-link span:after {
+    background-color: #fff;
+    width: 100%;
+    height: 0.2em;
+}
 
-        .pure-menu-link span:before,
-        .pure-menu-link span:after {
-            position: absolute;
-            margin-top: -0.6em;
-            content: " ";
-        }
+.pure-menu-link span:before,
+.pure-menu-link span:after {
+    position: absolute;
+    margin-top: -0.6em;
+    content: " ";
+}
 
-        .pure-menu-link span:after {
-            margin-top: 0.6em;
-        }
+.pure-menu-link span:after {
+    margin-top: 0.6em;
+}
 
 
 /* -- Responsive Styles (Media Queries) ------------------------------------- */
@@ -236,14 +235,14 @@ Hides the menu at `767px`, but modify this based on your app's needs.
         position: relative;
         padding-left: 0;
     }
-        #layout.active {
-            position: relative;
-            left: 150px;
-        }
-            #layout.active #menu {
-                left: 150px;
-                width: 150px;
-            }
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
+    #layout.active #menu {
+        left: 150px;
+        width: 150px;
+    }
 
     #menu {
         left: 0;
