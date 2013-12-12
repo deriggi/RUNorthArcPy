@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+
+    <title>RU North &ndash; Nov 2013 &ndash; DAI</title>
+
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+
+    <link rel="stylesheet" href="css/layouts/side-menu.css">
+
+
+</head>
+<body>
+
+    <div id="layout">
+        <!-- Menu toggle -->
+        <a href="#menu" id="menuLink" class="pure-menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+
+        <div id="menu">
+            <div class="pure-menu pure-menu-open">
+                <a class="pure-menu-heading" href="http://purecss.io/">Pure</a>
+
+                <ul>
+                    <li><span id='base'>Base</span></li>
+                    <li><a href="http://purecss.io/grids/">Grids</a></li>
+                    <li><a href="http://purecss.io/forms/">Forms</a></li>
+                    <li><a href="http://purecss.io/buttons/">Buttons</a></li>
+                    <li><a href="http://purecss.io/tables/">Tables</a></li>
+                    <li><a href="http://purecss.io/menus/">Menus</a></li>
+
+                    <li class="pure-menu-selected menu-item-divided">
+                        <a href="http://purecss.io/layouts/">Layouts</a>
+                    </li>
+                    <li><a href="http://purecss.io/customize/">Customize</a></li>
+                    <li><a href="http://purecss.io/extend/">Extend</a></li>
+                    <li><a href="http://blog.purecss.io/">Blog</a></li>
+                    <li><a href="https://github.com/yui/pure/releases/">Releases</a></li>
+
+                    <li class="menu-item-divided">
+                        <a href="http://yui.github.io/skinbuilder/?mode=pure">Skin Builder</a>
+                    </li>
+                    <li><a href="http://yuilibrary.com/">YUI Library</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="header" style="background-image:url('images/leadgreen2_small_V2_compressed.png');">
+
+
+                <h1 style='color:#efefef'>STTA Report for RAMP Up North</h1>
+                <h2>November 10 &ndash; December 4, 2013</h2>
+            </div>
+
+            <div class="content">
+
+
+                <h2 class="content-subhead">Technology Items Developed for RU North</h2>
+
+                <table class= 'pure-table pure-table-bordered '>
+                    <thead>
+                        <tr>
+                            <th style='width:200px'> Link</th>
+                            <th> Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><a href="https://github.com/deriggi/IFMSPatial">Software for IFMS User</a></td>
+                            <td>
+                                An installation with the demo data was completed with Ashuqulla Agha in preparation for deployment to the municipalities in February
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><a href = "https://github.com/deriggi/RUNorthArcPy"> Software for ArcGIS User</a> </td>
+                            <td>
+                                Worked with the GIS Unit office to get the ArcGIS data joined to the IFMS SQL Server data. We also worked to get the team comfortable
+                                with running Python scripts
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><a href = "https://docs.google.com/document/d/1wCUYNrI_xKw9jWy7e3fCLYoSWO62w1orsT3GmmkgfpA/edit?usp=sharing"> DB Analysis</a></td>
+                            <td>
+                                Database analysis based on the sample set for Mazar-e Sharif. Item 3 was presented to the GIS manager Waheed and IFMS Database expert Ashuqulla
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><a href = "https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/DataQuality.pyt"> Data Quality Tool</a></td>
+                            <td>
+                                Worked with Waheed for requirements on this. He suggested that we make a similar tool for studying errors in the digitization, which may be a higher priority
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><a href = "https://github.com/deriggi/RUNorthArcPy#python-gis-development-at-ramp-up-north"> Python Training </a></td>
+                            <td>
+                                Python training resources for the GIS team. The GIS team worked through examples and exercises for about 10 days of the STTA
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+
+                <h2 class="content-subhead">Outstanding Items Remaining</h2>
+
+                <p >
+                    Installation of the linked data will not be finished until the Safayi data entry is complete for every municipality and the GIS unit has updated their parcel data according the new parcel numbers created during registration
+                </p>
+
+
+
+
+                <h2 class="content-subhead">Overall Architecture and Identification of Two Users</h2>
+                <p>
+                    Integrating the Safayi registration data with the spatial data was one of the main objectives of the STTA. The purpose of the integration is to provide functionality for two distinct users: the IFMS user and the GIS Analyst user.
+                </p>
+
+                <ol>
+                    <li>GIS User: interacts primarily with spatial data in ArcGIS and wishes to have the option of viewing tabular data from the IFMS for parcels selected on the map</li>
+                    <li>IFMS User: interacts with the IFMS web application and wants to have the option of viewing  the location of a particular parcel on a map</li>
+                </ol>
+
+                <div class='pure-g-r'>
+                    <p> <img clas='pure-hidden-tablet pure-hidden-phone' src = "images/architecture.png" alt='mosque'/> </p>
+                </div>
+
+
+                <h2 class="content-subhead">Devlopment of Software for Two Use Cases</h2>
+                <p>
+                    The data integration effort was divided into two separate software packages, one for the GIS user and one for the IFMS user. Each package was placed on the free open source repository called GitHub. The repo makes it easy to combine documentation and raw code together in one coherent searchable web site
+                </p>
+
+                <p>
+                    For the GIS User the objective was to join the IFMS’s tabular data in SQL Server to the spatial data in ArcGIS. The limitation is that the ArcGIS can only easily join two separate data sets based on a single field. There are a few ways to approach this but the cleanest method was to attach the primary key of the target IFMS table to the spatial data, and then do the ArcGIS join and relate operations on the primary key to complete the join. The GisCode field would have been a potentially simpler option but there is a bug in the IFMS for certain combinations of parcel, district, and guzer rendering the field unreliable for universal operations. <a href ="https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/pkattacher.py">This Python script</a> was developed as a configurable tool to assist with the join. The team in the GIS Unit office practiced a few sample operations with the data
+                </p>
+
+                <p>
+                    The goal of the IFMS user development was to build a GIS extension into the IFMS that would give the user the option of interacting with a map showing the location of a particular parcel
+                </p>
+
+                <p>
+                    For the first iteration we considered the simplest possible solution, in which static map images of every parcel would be deployed to the IFMS server. This way, when the user clicked on the map link on the IFMS, they would be presented with a simple web page containing several images of the parcel at different zoom levels. The advantages of a system like this are its simplicity and relatively easy installation. The disadvantage is the tens of thousands of map images that would need to be created, potentially requiring days to generate. The ultimate solution involved building a simple interactive web map from the parcel data and using the IFMS web server as a tile server for the 
+                    map.
+                </p>
+
+
+
+                <div class='pure-g-r'>
+                    <p> <img  src = "images/ifms.png" alt='mosque'/> </p>
+                </div>
+
+                <p>
+                    Several different programming environments were used to build the web construction:
+                </p>
+
+
+
+
+                <table class= 'pure-table '>
+                    <thead>
+                        <tr>
+                            <th>Software Package</th>
+                            <th> Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>LeafletJS</td>
+                            <td>Free JavaScript mapping library</td>
+                        </tr>
+
+                        <tr>
+                            <td>TileMill</td>
+                            <td>Free tool for making web maps </td>
+                        </tr>
+
+                        <tr>
+                            <td>Java (or Python)</td>
+                            <td>Created to convert shapefiles into .JSON</td>
+                        </tr>
+
+                        <tr>
+                            <td>MBUtil</td>
+                            <td>Convert binary mbtiles to flat folder structure</td>
+                        </tr>
+
+                        <tr>
+                            <td>ASP.NET</td>
+                            <td>Web framework language for IFMS</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="content-subhead">Safayi Data Assessment</h2>
+                <p>
+                    With the survey data transmission not yet complete, the 3000 sample records from the Mazar-e Sharif IFMS were used to analyze the structure and contents of the database. The goals for the DB analysis were:
+                </p>
+
+                <ol>
+                    <li>
+                        Locate duplicate data
+                    </li>
+
+                    <li>
+                        Note misplaced fields (name in place of property usage)
+                    </li>
+
+                    <li>
+                        Determine which combination of fields uniquely identify a property
+                    </li>
+                </ol>
+
+                <p>
+
+                    The full db analysis is <a href="https://docs.google.com/document/d/1wCUYNrI_xKw9jWy7e3fCLYoSWO62w1orsT3GmmkgfpA/edit?usp=sharing">here </a>. There appear to be some problems with the free text fields on the IFMS.When we visisted the municipality office, Waheed witnessed a data entry clerk using the Elder Father’s name field for general property information.Also, in the area field for the property table there are multiple instances in which a person’s name is listed. A full quantitative analysis was not 
+
+                </p>
+
+                <h2 class="content-subhead">Safayi survey and GIS Team Workflow</h2>
+
+                <p>
+                    The survey teams and the GIS team coordinate on data collection and parcel boundary identification. Maps are first created by the GIS team and then delivered to the property registration team to serve as a guide for data collection. Parcel IDs are assigned to each property and written on paper satellite images of each block. The maps are delivered back to the GIS team where another data entry process updates the spatial data with the new parcel IDs.
+                </p>
+
+
+                <div class='pure-g-r'>
+                    <p> <img  src = "images/workflow.png" alt='workflow'/> </p>
+                </div>
+
+                <div id='log'>
+
+                </div>
+
+                <h2 class="content-subhead">Number of Parcels Recorded by Municipality</h2>
+                <canvas id="myChart" width="800" height="400"></canvas>
+
+
+
+                <h2 class="content-subhead">Data Quality Tool</h2>
+
+                <p>
+                    A tool was built to validate the attribute fields in the spatial data. Specifically, each parcel in the dataset lists the District, Block, and sometimes the Guzer in which the parcel belongs.
+                </p>
+
+                <p>
+                    Considering the spatial relationships, each level of the boundary hierarchy is within its parent boundary demarcations. Therefore, the spatial relationship can be used to determine the validity of the attribute data. The <a href='https://github.com/deriggi/RUNorthArcPy/blob/master/advanced/DataQuality.pyt'>code </a> for the data quality tool iterates through each parcel and performs the following steps:
+                </p>
+
+                <ol>
+                    <li>Calculate the center point of the parcel</li>
+                    <li>Determine if the block containing this point is the same as that listed in the attribute field for the parcel</li>
+                    <li>Determine if the district containing this point is the same as that listed in the attribute field</li>
+                    <li>Display results to the user</li>
+                </ol>
+
+                <p>
+                    Recommendation from Waheed is to build a tool which helps identify parcel overlaps and gaps between parcels which are close to one another. 
+                </p>
+
+
+
+                <div class='pure-g-r'>
+                    <p> <img  src = "images/dqtool.png" alt='mosque'/> </p>
+                </div>
+
+                <h2 class="content-subhead">Python Training</h2>
+                <p>
+                    Introductory Python programming was provided most of the last 10 days of the effort. The purpose of the training was to get the team comfortable working with code and to help them apply Python to make GIS tasks easier, less repetitive, and less susceptible to error. Also, the integration software developed for for the GIS User was written in Python so familiarizing the team with the code should make them more capable of operating the integration.
+
+                    <a href = "https://github.com/deriggi/RUNorthArcPy#python-gis-development-at-ramp-up-north">Python training material</a>
+
+                </p>
+
+                <p>
+                    The GitHub site contains a set of introductory lessons followed by four GIS related projects
+
+                    Two of the staff receiving the training seemed particularly interested in continuing to work with the programming language
+                </p>
+
+                <h2 class="content-subhead tilemill">TileMill and Web Cartography  </h2>
+                <p>
+                    The GIS Analysts’ skills are strong with the ArcGIS software suite. They understand how to manipulate attribute data and produce cartographic products at different scales with different types of imagery. Their experience with building maps online is limited. We worked through some basic examples with TileMill and a few other tools using the team’s parcel data.
+                </p>
+                
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/ui.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/Chart.min.js"></script>
+
+
+    <script>
+
+    $(document).ready(function(){
+
+        $('#base').click(function(){
+            $('.tilemill').scroll();
+        })
+
+        //resizeOnDelay();
+
+        window.addEventListener('resize', resizeOnDelay, false);
+        window.addEventListener('orientationchange', resizeOnDelay, false);
+        window.addEventListener('scroll', resizeFromScrollOnDelay, false);
+
+    });
+
+
+    var DisplayStatusHolder = (function(){
+        var displayStatuses = {};
+
+        return{
+            setDisplayedStatus : function(el,status){
+                displayStatuses[el] = status;
+            },
+
+            getDisplayedStatus : function(el){
+                return displayStatuses[el]
+                
+            }
+        }
+    })();
+
+    var TimeoutHolder = (function(){
+        var timeoutId = null;
+
+        return{
+            setTimeout : function(ti){
+
+                if (typeof ti == "number" && timeoutId != null){
+                    window.clearTimeout(timeoutId)
+
+                }
+                timeoutId = ti
+            }
+        }
+    })();
+
+
+    function loadData(){
+
+        var data = {
+            labels : ["Faizabad","Pul-e Kumri","Khulm","Mazar-e Sharif","Andkhoy","Maymana","Aqcha", "Sheberghan", "Kunduz", "Aybak", "Sar-e Pul"],
+
+            datasets : [
+            {
+                fillColor : "rgba(30,30,30,0.4)",
+                strokeColor : "rgba(120,120,120,1)",
+                data : [11972,24248,7925,74000,9657,13740,6277,24823,31531,5210,9685]
+            }
+
+            ]
+        }
+
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        var myNewChart = new Chart(ctx).Bar(data);
+
+
+    }
+
+    function inView(el) {
+        var win = $(window)
+        var docViewTop = win.scrollTop();
+        var docViewBottom = docViewTop + win.height();
+        var elemTop = $(el).offset().top;
+        var elemBottom = elemTop + $(el).height();
+
+
+        return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom)
+            && (elemBottom <= docViewBottom) &&  (elemTop >= docViewTop) );
+    }
+
+
+    function resizeFromScrollOnDelay(){
+        var chartId = 'myChart'
+        var ga = document.getElementById(chartId);
+        var yetDisplayed = DisplayStatusHolder.getDisplayedStatus(chartId)
+        
+        if( inView(ga) && yetDisplayed === undefined ){
+            
+            // display
+            DisplayStatusHolder.setDisplayedStatus(chartId,true)
+            var timeoutID = window.setTimeout(resizeGame,200);
+            TimeoutHolder.setTimeout(timeoutID)
+
+        }
+
+        
+
+
+    }
+
+
+    function resizeOnDelay(){
+        var ga = document.getElementById('myChart');
+        
+        
+        
+            var timeoutID = window.setTimeout(resizeGame,600);
+            TimeoutHolder.setTimeout(timeoutID)    
+        
+
+        
+
+
+    }
+
+    function resizeGame() {
+        var gameArea = document.getElementById('myChart');
+        var ctx = gameArea.getContext("2d")
+        var widthToHeight = 2 / 1;
+        var newWidth = window.innerWidth*0.8;
+
+        if(newWidth > 800){
+            newWidth = 800
+        }
+        else if (newWidth < 300 && ctx){
+                // Store the current transformation matrix
+                ctx.save();
+
+                // Use the identity matrix while clearing the canvas
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.clearRect(0, 0, gameArea.width, gameArea.height);
+
+                return
+            }
+        //$('#log').append('<p>draw</p>')
+        var newHeight = newWidth/2
+        gameArea.style.height = newHeight + 'px';
+        gameArea.style.width = newWidth + 'px';
+
+
+
+        var gameCanvas = document.getElementById('myChart');
+        gameCanvas.width = newWidth;
+        gameCanvas.height = newHeight;
+        loadData()
+    }
+
+
+    </script>
+
+
+</body>
+</html>
