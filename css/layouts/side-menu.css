@@ -34,6 +34,16 @@ The content `<div>` is where all your content goes.
     line-height: 1.6em;
 }
 
+.content a{
+    color:#006289;
+    text-decoration:none;
+
+}
+
+.content a:hover{
+    text-decoration:underline;
+}
+
 .header {
      margin: 0;
      color: #333;
@@ -150,6 +160,7 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
         color: #fff;
         margin: 0;
     }
+
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
 
