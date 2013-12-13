@@ -271,10 +271,10 @@
                 </div>
 
                 <h2 class="content-subhead">Number of Parcels Recorded by Municipality</h2>
-                <div class='pure-g-r'>
-                    <canvas class='pure-u-1' id="myChart" width="800" height="400"></canvas>
+                
+                    <canvas  id="myChart" width="800" height="400"></canvas>
 
-                </div>
+                
 
 
                  <h2 class="content-subhead"> Demographic Data</h2>
@@ -282,9 +282,8 @@
                     This is an example of some of the high level census data that will be made available when property surveys are complete. The darker shaded provinces are part of RAMP UP North
                 </p>
 
-                <div class='pure-g-r' >
-                    <div class='pure-r-1' id='map' style="width:100%; height:600px"></div>
-                </div>
+                <div  id='map' style="width:100%; height:600px"></div>
+                
 
                 <h2 class="content-subhead dataquality">Data Quality Tool</h2>
 
@@ -561,7 +560,7 @@
             gameCanvas.height = newHeight;
             loadData()
         }
-        else if (newWidth < 300 && ctx){
+        else if (newWidth < 100 && ctx){
                 // Store the current transformation matrix
                 ctx.save();
 
