@@ -533,6 +533,7 @@
 
 
     function resizeOnDelay(){
+        // alert('resize called')
         var ga = document.getElementById('myChart');
         var timeoutID = window.setTimeout(resizeChartCanvas,600);
         TimeoutHolder.setTimeout(timeoutID)    
@@ -546,21 +547,24 @@
         var widthToHeight = 2 / 1;
         var newWidth = window.innerWidth*0.8;
 
-        if(newWidth > 800){
-            newWidth = 800
-            //$('#log').append('<p>draw</p>')
+        if (newWidth > 800){
+            newWidth = 800;
+        }
+
+        if(newWidth >= 200){
             var newHeight = newWidth/2
             gameArea.style.height = newHeight + 'px';
             gameArea.style.width = newWidth + 'px';
-
-
 
             var gameCanvas = document.getElementById('myChart');
             gameCanvas.width = newWidth;
             gameCanvas.height = newHeight;
             loadData()
+
+           
         }
-        else if (newWidth < 100 && ctx){
+        else if (newWidth < 200 && ctx){
+
                 // Store the current transformation matrix
                 ctx.save();
 
@@ -570,6 +574,8 @@
 
                 return
         }
+
+
         
     }
 
