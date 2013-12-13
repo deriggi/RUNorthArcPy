@@ -135,6 +135,7 @@ the menu have 100% height and be fixed on the page as the rest of it scrolls.
         #menu .pure-menu li span:hover,
         #menu .pure-menu li span:focus {
             background: #333;
+            cursor:pointer;
         }
 
     /*

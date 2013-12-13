@@ -17,23 +17,23 @@
     <link rel="stylesheet" href="css/layouts/side-menu.css">
 
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type=
-  'text/css' />
-  <style type="text/css">
-        /*<![CDATA[*/
-      body {
+    'text/css' />
+    <style type="text/css">
+    /*<![CDATA[*/
+    body {
 
-       font-family: 'Raleway', sans-serif;
-      
-        color: #3f3f3f;
+     font-family: 'Raleway', sans-serif;
 
-      }
-    
-    .texty{
+     color: #3f3f3f;
+
+ }
+
+ .texty{
     font-size:14pt;
-    }
-    
-  /*]]>*/
-  </style>
+}
+
+/*]]>*/
+</style>
 
 
 </head>
@@ -66,7 +66,7 @@
                     <li id='dataquality'><span>Data Quality</span></li>
                     <li id='pythontraining'><span>Python Training</span></li>
                     <li id='tilemill'><span>Web Cartography</span></li>
-                 
+
 
                     <li class="menu-item-divided">
                         <span><!--Maps--> </span>
@@ -85,7 +85,12 @@
             </div>
 
             <div class="content">
-                
+                <h2 class="content-subhead techitems">Overview</h2>
+                <p>This web document is a high level overview of the STTA in support of RAMP UP North</p>
+
+
+
+
                 <h2 class="content-subhead techitems">Technology Items Developed for RU North</h2>
 
                 <table class= 'pure-table pure-table-bordered '>
@@ -144,7 +149,7 @@
                     Installation of the linked data will not be finished until the Safayi data entry is complete for every municipality and the GIS unit has updated their parcel data according the new parcel numbers created during registration
                 </p>
 
-               
+
 
 
 
@@ -158,10 +163,7 @@
                     <li>IFMS User: interacts with the IFMS web application and wants to have the option of viewing  the location of a particular parcel on a map</li>
                 </ol>
 
-                <div class='pure-g-r'>
-                    <div class='pure-u-1'> <img src = "images/architecture.png" alt='mosque'/> </div>
-                </div>
-
+               
 
                 <h2 class="content-subhead software">Devlopment of Software for Two Use Cases</h2>
                 <p>
@@ -183,10 +185,7 @@
 
 
 
-                <div class='pure-g-r'>
-                    <p class='pure-u-1'> <img  src = "images/ifms.png" alt='mosque'/> </p>
-                </div>
-
+               
                 <p>
                     Several different programming environments were used to build the web construction:
                 </p>
@@ -262,23 +261,14 @@
                 </p>
 
 
-                <div class='pure-g-r'>
-                   <div class='pure-u-1'> <img  src = "images/workflow2.png" alt='workflow'/> </div>
-                </div>
-
                 <div id='log'>
 
                 </div>
 
                 <h2 class="content-subhead">Number of Parcels Recorded by Municipality</h2>
-                <div class='pure-g-r'>
-                    <canvas class='pure-u-1' id="myChart" width="800" height="400"></canvas>
+                <canvas id="myChart" width="800" height="400"></canvas>
 
-                </div>
 
-                <div class='pure-g-r' >
-                    <div class='pure-r-1' id='map' style="width:100%; height:600px"></div>
-                </div>
 
                 <h2 class="content-subhead dataquality">Data Quality Tool</h2>
 
@@ -303,9 +293,7 @@
 
 
 
-                <div class='pure-g-r'>
-                    <p class='pure-u-1'> <img  src = "images/dqtool.png" alt='dataqualitytool'/> </p>
-                </div>
+                
 
                 <h2 class="content-subhead pythontraining">Python Training</h2>
                 <p>
@@ -327,14 +315,12 @@
                 </p>
                 
                 <div class='pure-g-r'>
-                    <div class='pure-u-1'> <img  src = "images/tilemill.png" alt='tilemill'/> </div>
-                    
-
+                    <p class='pure-u'> <img  src = "images/tilemillsmall.png" alt='tilemill'/> </p>
                 </div>
 
-
                 
-              
+
+
                 
 
 
@@ -426,42 +412,42 @@
     });
 
 
-    var DisplayStatusHolder = (function(){
-        var displayStatuses = {};
+var DisplayStatusHolder = (function(){
+    var displayStatuses = {};
 
-        return{
-            setDisplayedStatus : function(el,status){
-                displayStatuses[el] = status;
-            },
+    return{
+        setDisplayedStatus : function(el,status){
+            displayStatuses[el] = status;
+        },
 
-            getDisplayedStatus : function(el){
-                return displayStatuses[el]
-                
-            }
+        getDisplayedStatus : function(el){
+            return displayStatuses[el]
+
         }
-    })();
+    }
+})();
 
-    var TimeoutHolder = (function(){
-        var timeoutId = null;
+var TimeoutHolder = (function(){
+    var timeoutId = null;
 
-        return{
-            setTimeout : function(ti){
+    return{
+        setTimeout : function(ti){
 
-                if (typeof ti == "number" && timeoutId != null){
-                    window.clearTimeout(timeoutId)
+            if (typeof ti == "number" && timeoutId != null){
+                window.clearTimeout(timeoutId)
 
-                }
-                timeoutId = ti
             }
+            timeoutId = ti
         }
-    })();
+    }
+})();
 
 
-    var LinkSelectorManager = (function(){
-        var selectedLink = null;
+var LinkSelectorManager = (function(){
+    var selectedLink = null;
 
-        return{
-            setSelectedLink : function(selected){
+    return{
+        setSelectedLink : function(selected){
                 // unselect previous
                 if (selectedLink != null){
                     $(selectedLink).removeClass('pure-menu-selected menu-item-divided')
@@ -516,7 +502,7 @@
         var yetDisplayed = DisplayStatusHolder.getDisplayedStatus(chartId)
         
         if( inView(ga) && yetDisplayed === undefined ){
-            
+
             // display
             DisplayStatusHolder.setDisplayedStatus(chartId,true)
             var timeoutID = window.setTimeout(resizeChartCanvas,200);
@@ -564,32 +550,19 @@
                 ctx.clearRect(0, 0, gameArea.width, gameArea.height);
 
                 return
+            }
+
         }
-        
-    }
 
 
-    function loadMap(){
-        L.mapbox.map('map', 'johnderiggi.ghdi37m5',{scrollWheelZoom:false, gridControl:false})
-    .setView([34.121, 67.050], 6);
-
-    map.gridLayer.on('mousemove',function(o) {
-        
-          if(o.data && o.data.POP_MALE){
-            document.getElementById('malepop').innerHTML = o.data.POP_MALE
-          }
-          
-        }).on('mouseout', function(o) {
-          //document.getElementById('nahianumber').innerHTML = ''
-        
-        }).on('click', function(o){
-          alert(o.data.POP_MALE );
-        }); 
-    }
+        function loadMap(){
+            L.mapbox.map('map', 'johnderiggi.ghdi37m5',{scrollWheelZoom:false})
+            .setView([34.121, 67.050], 6);
+        }
 
 
-    </script>
+        </script>
 
 
-</body>
-</html>
+    </body>
+    </html>
