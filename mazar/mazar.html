@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+  <meta name='viewport' content=
+  'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+ 
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.js'></script>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.css' rel='stylesheet' />
+
+
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type=
+  'text/css' />
+  <style type="text/css">
+/*<![CDATA[*/
+      body {
+
+        font-family: 'Raleway', sans-serif;
+        color: #3f3f3f;
+        height: 100%;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        padding:0px;
+      }
+    
+      .texty{
+        font-size:14pt;
+      }
+
+   
+    
+  /*]]>*/
+  </style>
+
+  <title>surge</title>
+</head>
+
+  <body style='padding:0px'>
+    
+
+     <div  style='z-index:500; width:100%; height:50px; position:absolute; top:10px;'><span style=' padding-left:60px;  font-size:24pt; color:#efefef'>Mazar-e Sharif </span></div>
+     <div id='map' style='position:absolute; height:100%; width:100%;  overflow:hidden'> </div>
+
+     <div id='stats' style='position:absolute; height:400px; width:400px;top:20px;  right:15px;  background-color:rgb(0,0,0); opacity:0.8;' > 
+      
+      <p style='padding-top:5px; padding-left:10px; font-size:20pt; color:#efefef; border-bottom-style:dotted;border-bottom-width:0.3px; border-bottom-color: #808080'>
+        Nahia   <span id='nahianumber' > </span>
+      </p>
+      
+      <p style='padding-top:5px; padding-left:10px; font-size:10pt; color:#efefef; '>
+        
+        %<span id='commercialpercent' >25 </span> Commercial 
+      
+      </p>
+
+      <p style='padding-top:5px; padding-left:10px; font-size:10pt; color:#efefef; '>
+        
+        %<span id='residentialpercent' >15 </span> Residential 
+      
+      </p>
+       
+    
+    </div>
+    
+    
+
+    
+    
+      
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script src="jquery.min.scroll.js"></script>
+
+
+    <script>
+        var map = L.mapbox.map('map',  'johnderiggi.gcik7hij' ,{ gridControl: false, center: [36.6546, 67.2795], zoom:12, scrollWheelZoom:false});
+        map.gridLayer.on('mousemove',function(o) {
+        
+          if(o.data && o.data.District){
+            document.getElementById('nahianumber').innerHTML = o.data.District
+          }
+          
+        }).on('mouseout', function(o) {
+          //document.getElementById('nahianumber').innerHTML = ''
+        
+        }).on('click', function(o){
+          alert(o.data.District );
+        }); 
+
+       $(document).ready(function(){
+        
+
+        $('#abstract').click(function(){
+          $('.abstract').scroll()
+        })
+
+        $('#design').click(function(){
+          $('.design').scroll()
+        })
+
+        $('#stuck').click(function(){
+          $('.stuck').scroll()
+        })
+
+      /**  $('#demo').click(function(){
+          $('.demo').scroll()
+        })
+    
+    $('#results').click(function(){
+          $('.results').scroll()
+        })**/
+
+      });
+    </script>
+
+  </body>
+</html>
