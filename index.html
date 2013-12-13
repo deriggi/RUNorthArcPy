@@ -283,6 +283,7 @@
                 </p>
 
                 <div  id='map' style="width:100%; height:600px"></div>
+
                 
 
                 <h2 class="content-subhead dataquality">Data Quality Tool</h2>
@@ -581,21 +582,31 @@
 
 
     function loadMap(){
-        L.mapbox.map('map', 'johnderiggi.ghdi37m5',{scrollWheelZoom:false, gridControl:false})
-    .setView([34.121, 67.050], 6);
 
-    map.gridLayer.on('mousemove',function(o) {
-        
-          if(o.data && o.data.POP_MALE){
-            document.getElementById('malepop').innerHTML = o.data.POP_MALE
-          }
+     var map=   L.mapbox.map('map', 'johnderiggi.ghdi37m5',{scrollWheelZoom:false, gridControl:true, shareControl:true})
+    .setView([34.121, 67.050], 6);  
+
+    // var map=   L.mapbox.map('map', 'johnderiggi.ghdi37m5')
+    // .setView([34.121, 67.050], 6);
+
+    
+
+    /**map.gridLayer.on('mousemove',function(o) {
+                
+                     
+      if(o.data && o.data.POP_MALE){
+        alert(o.data.POP_MALE)
+        document.getElementById('malepop').innerHTML = o.data.POP_MALE
+      }
           
-        }).on('mouseout', function(o) {
-          //document.getElementById('nahianumber').innerHTML = ''
-        
-        }).on('click', function(o){
-          alert(o.data.POP_MALE );
-        }); 
+    }).on('mouseout', function(o) {
+      //document.getElementById('nahianumber').innerHTML = ''
+    
+    }).on('click', function(o){
+      alert(o.data.POP_MALE );
+    });**/
+
+
     }
 
 
