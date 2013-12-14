@@ -176,10 +176,20 @@
                     The goal of the IFMS user development was to build a GIS extension into the IFMS that would give the user the option of interacting with a map showing the location of a particular parcel
                 </p>
 
+
+
                 <p>
                     For the first iteration we considered the simplest possible solution, in which static map images of every parcel would be deployed to the IFMS server. This way, when the user clicked on the map link on the IFMS, they would be presented with a simple web page containing several images of the parcel at different zoom levels. The advantages of a system like this are its simplicity and relatively easy installation. The disadvantage is the tens of thousands of map images that would need to be created, potentially requiring days to generate. The ultimate solution involved building a simple interactive web map from the parcel data and using the IFMS web server as a tile server for the 
                     map.
                 </p>
+
+                <p>
+                    One of the major contstraints of the application development is that it needed to function without a connection to the public internet
+                </p>
+
+                <div class='pure-g-r'>
+                    <div class='pure-u-1'> <img src = "images/nointernet.png" alt='mosque'/> </div>
+                </div>
 
 
 
@@ -190,7 +200,7 @@
                     The map is accessible from a link on the details page.</p>
 
                 <p>
-                    Several different programming environments were used to build the web construction:
+                    Several different programming environments were used to build the web-gis extension:
                 </p>
 
 
