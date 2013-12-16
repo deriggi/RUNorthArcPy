@@ -272,13 +272,23 @@
 
                 <h3 id='ifmsprobs' class="content-subhead content-link">IFMS Assessment <a class='content-link' href='#ifmsprobs'><img src='images/link-icon.png' /></a></h3>
 
+                <p>
+                    This assessment is of a narrow slice of the system, mostly from my time working with the property data during my STTA at RAMP UP North. Overall, the system seems to do the basics well, which is to provide the functionality to create, read, update and delete property data recorded in the field during the Safayi registration process. The IFMS is standard three tiered web application with running on a Microsoft SQL Sever and ASP.NET stack. 
+                </p>
+                 
+                <p>
+                    The IFMS is capable of running entirely without a connection to the public internet, which is an adavantage from a security perspective. Conversely though, it does not seem to have been built with interoperability in mind. Lacking in the IFMS are web-level or application-level APIs that would make the system extensible by exposing its functions and data to external applications..  
+               </p>
+
+               
+
 
                 <p> 
                     <strong>Too few data quality checks at the application layer </strong> Data entry technicians enter data manually from paper based property surveys. There are few protections from problems related to the free text fields. For example, in the 3000 sized sample data set for Mazar-e Sharif, person names were found to have been entered into a field reserved for the neighbourhood name field for the property.
                 </p>
 
                 <p>
-                    <strong>Too few data quality checks at the database layer.</strong> Particularly regarding field length and uniqueness on several fields. Some data quality checks could be put in place to prevent description data being placed in the Elder Father’s name field, as it was found to be.
+                    <strong>Too few data quality checks at the database layer.</strong> Particularly regarding field length and uniqueness on several fields. Some data quality checks could be put in place to prevent description data being placed in the Elder Father’s name field, where it was found to be in some situations.
 
                 </p>
 
@@ -289,6 +299,11 @@
                 <p>
                     <strong>Relationships between owners and properties is not clearly defined. </strong> There are no explicit primary key and foreign key relationships between the property table and the major entities supporting it
                 </p>
+
+                
+
+                <h4 class="content-subhead">Known Bugs</h4>
+                <p>The GISCode field in the Property table is known to insert incorrectly when the district, block and guzer are all equal to 1. The effect is that hyphens are stripped from the code rendering it inconsistent with the other GIS codes in the table</p>
 
 
                 <h2 class="content-subhead workflow">Safayi Survey and GIS Team Workflow</h2>
